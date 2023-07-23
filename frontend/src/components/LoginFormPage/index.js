@@ -24,7 +24,7 @@ function LoginFormPage() {
 
   return (
     <>
-      <h1>Log In</h1>
+      <img src="./images/TheoZon.jpg" alt="TheoZon"></img>
 
       <form onSubmit={handleSubmit}>
         

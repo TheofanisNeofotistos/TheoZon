@@ -1,0 +1,57 @@
+
+.loginContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.loginFormContainer{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    width: 320px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+
+.signinButton{
+    background-color: #FFD712;
+    border-radius: 4px;
+    border: 1px solid gray;
+    height: 30px;
+}
+
+.signinButton:hover{
+    background-color: #f5d223;
+}
+
+.loginLogo{
+    width: 110px;
+    display: block;
+    margin: auto;
+}
+
+.loginAgreement{
+   font-size: smaller;
+}
+
+.loginEmail{
+    width: 300px;
+    height: 20px;
+}
+
+.credentialsField{
+    width: 300px;
+    height: 23px;
+    padding: 3px 7px;
+}

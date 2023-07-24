@@ -30,27 +30,28 @@ function SignupFormPage() {
 
   return (
     <>
+      <img class="signuplogo" src="./TheoZon.jpg" alt="TheoZon"></img>
       <h1>Sign Up to TheoZon!</h1>
       
-      <form onSubmit={handleSubmit}>
+      <form class="signupForm" onSubmit={handleSubmit}>
        
-        <label> Email
+        <label class="signupEmail"> Email
           <input type="text"value={email} onChange={(e) => setEmail(e.target.value)} required/>
         </label>
 
-        <label>Username
+        <label class="signupUsername">Username
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required/>
         </label>
 
-        <label>Password
+        <label class ="signupPassword">Password
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </label>
 
-        <label> Confirm Password
+        <label class ="signupConfirmPassword"> Confirm Password
           <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
         </label>
 
-        <button type="submit">Sign Up</button>
+        <button class="signupButton" type="submit">Sign Up</button>
       </form>
     </>
   );

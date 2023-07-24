@@ -24,21 +24,42 @@ function LoginFormPage() {
 
   return (
     <>
-      <img src="./images/TheoZon.jpg" alt="TheoZon"></img>
 
-      <form onSubmit={handleSubmit}>
-        
-        <label> Email
-          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-        </label>
+      <img className="loginLogo" src="./TheoZonLogo.png" alt="TheoZon"></img>
+      
+      <div className="loginContainer">
+        <br/>
 
-        <label>Password
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </label>
+        <div className="loginFormContainer">
+          <form onSubmit={handleSubmit}>
 
-        <button type="submit">Log In</button>
+            <h2 className="formSigninHeader">Sign In</h2>
 
-      </form>
+            <p>Email</p>
+
+            <label > 
+              <input className="credentialsField" type="text" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+            </label>
+
+            <br/>
+
+            <p>Password</p>
+            <label >
+              <input className="credentialsField" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            </label>
+
+            <br/>
+
+            <button className="signinButton" type="submit">Sign In</button>
+            <br/>
+            <button className="signinButton" type="submit">Demo User</button>
+            <br/>
+            <p className="loginAgreement">By continuing, you agree to TheoZon's Conditions of Use and Privacy Notice .</p>
+
+          </form>
+        </div>
+      
+      </div>
 
     </>
   );

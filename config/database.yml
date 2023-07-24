@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: TheoZon_production
-  username: TheoZon
-  password: <%= ENV["THEOZON_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

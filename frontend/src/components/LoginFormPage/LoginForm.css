@@ -10,6 +10,13 @@
    
 }
 
+.loginEmailHeader{
+    font-weight: bold;
+}
+
+.loginPasswordHeader{
+    font-weight: bold;
+}
 
 form {
     display: flex;
@@ -21,14 +28,23 @@ form {
     border-radius: 3px;
     padding: 10px 20px;
     justify-content: space-between;
+    font-family: 'Amazon Ember', sans-serif;
+    
+
+   
+    
 }
 
+.formSigninHeader{
+    font-size: 28px;
+}
 
 .signinButton{
     background-color: #FFD712;
     border-radius: 4px;
     border: 1px solid gray;
     height: 30px;
+    font-family: 'Amazon Ember', sans-serif;
 }
 
 .signinButton:hover{
@@ -43,15 +59,18 @@ form {
 
 .loginAgreement{
    font-size: smaller;
+   font-family: 'Amazon Ember', sans-serif;
 }
 
 .loginEmail{
     width: 300px;
     height: 20px;
+    font-family: 'Amazon Ember', sans-serif;
 }
 
 .credentialsField{
     width: 300px;
     height: 23px;
     padding: 3px 7px;
+    font-family: 'Amazon Ember', sans-serif;
 }

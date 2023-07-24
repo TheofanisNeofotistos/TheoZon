@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import * as session from './store/session'
 import { useHistory } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
         <Route path="/signup">
           <SignupFormPage />
         </Route>
-        <Route path="/"></Route>
+        <Route path="/"><Navbar/></Route>
       </Switch>
 
       <button onClick={handleLogOut}>Log Out!</button>

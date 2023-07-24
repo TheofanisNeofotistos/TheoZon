@@ -34,15 +34,14 @@ function LoginFormPage() {
           <form onSubmit={handleSubmit}>
 
             <h2 className="formSigninHeader">Sign In</h2>
+            
 
             <p className="loginEmailHeader">Email</p>
 
             <label > 
               <input className="credentialsField" type="text" value={email} onChange={(e) => setEmail(e.target.value)} required/>
             </label>
-
-            <br/>
-
+            
             <p className="loginPasswordHeader">Password</p>
             <label >
               <input className="credentialsField" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
@@ -58,6 +57,7 @@ function LoginFormPage() {
 
           </form>
         </div>
+
       
       </div>
 

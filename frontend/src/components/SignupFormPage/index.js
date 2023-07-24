@@ -30,29 +30,45 @@ function SignupFormPage() {
 
   return (
     <>
-      <img class="signuplogo" src="./TheoZon.jpg" alt="TheoZon"></img>
-      <h1>Sign Up to TheoZon!</h1>
-      
-      <form class="signupForm" onSubmit={handleSubmit}>
-       
-        <label class="signupEmail"> Email
-          <input type="text"value={email} onChange={(e) => setEmail(e.target.value)} required/>
-        </label>
 
-        <label class="signupUsername">Username
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required/>
-        </label>
+      <img className="signupLogo" src="./TheoZonLogo.png" alt="TheoZon"></img>
 
-        <label class ="signupPassword">Password
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </label>
+      <div className="signupContainer">
+        
+        <div className="singupFormContainer">
 
-        <label class ="signupConfirmPassword"> Confirm Password
-          <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-        </label>
+          <form onSubmit={handleSubmit}>
 
-        <button class="signupButton" type="submit">Sign Up</button>
-      </form>
+            <h2>Create Account</h2>
+
+            <p className="signupNameHeader">Your name</p>
+            <label >
+              <input class="signupCredentialsField" placeholder="First and last name" type="text" value={username} onChange={(e) => setUsername(e.target.value)} required/>
+            </label>
+
+            <p className="signupEmailHeader">Email</p>
+            <label > 
+              <input class="signupCredentialsField" type="text"value={email} onChange={(e) => setEmail(e.target.value)} required/>
+            </label>
+
+            <p className="signupPasswordHeader">Password</p>
+            <label >
+              <input class="signupCredentialsField" placeholder="At least 6 characters" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            </label>
+
+            <p className="signupPasswordHeader">Re-enter Password</p>
+            <label > 
+              <input class="signupCredentialsField" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+            </label>
+            <br/>
+
+            <button class="createButton" type="submit">Continue</button>
+            <p className="loginAgreement">By creating an account, you agree to TheoZon's Conditions of Use and Privacy Notice .</p>
+          </form>
+          
+        </div>
+
+      </div>
     </>
   );
 }

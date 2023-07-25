@@ -94,13 +94,18 @@ form {
     height: 23px;
     padding: 3px 7px;
     font-family: 'Amazon Ember', sans-serif;
-    border: 1px solid red;
+    border: 1px solid #CC0C39;;
     
 }
 
 .loginError{
-    color: red;
+    color: #CC0C39;;
     font-size: small;
+}
+
+.signupCredentialsFieldErrors:focus{
+    box-shadow: 0 0 0 1px #cc0c39 inset,0 0 0 3px #ffe3e3;
+    background-color: #fff
 }
 
 .signupCredentialsField:focus{

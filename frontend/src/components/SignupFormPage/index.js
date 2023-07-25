@@ -72,13 +72,13 @@ function SignupFormPage() {
 
             <p className="signupEmailHeader">Email</p>
             <label > 
-              <input className="signupCredentialsField" type="text"value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input className={getErrorsByField("Email")? "signupCredentialsFieldErrors":"signupCredentialsField"}  type="text"value={email} onChange={(e) => setEmail(e.target.value)} />
             </label>
             {getErrorsByField("Email")? <span className="loginError">{getErrorsByField("Email")}</span>: <span></span>}
 
             <p className="signupPasswordHeader">Password</p>
             <label >
-              <input className="signupCredentialsField" placeholder="At least 6 characters" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              <input className={getErrorsByField("Password")? "signupCredentialsFieldErrors":"signupCredentialsField"} placeholder="At least 6 characters" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
             {getErrorsByField("Password")? <span className="loginError">{getErrorsByField("Password")}</span>: <span></span>}
 

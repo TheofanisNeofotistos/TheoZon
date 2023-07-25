@@ -3,6 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import './LoginForm.css';
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function LoginFormPage() {
 
@@ -40,9 +41,13 @@ function LoginFormPage() {
   };
 
   const getErrorsByField = (field) => {
-    return errors.find((error) => {
-      return error.includes(field)
-    })
+    if(errors){
+      return errors.find((error) => {
+        return error.includes(field)
+      })
+    }else {
+      return false
+    }
   }
 
   return (

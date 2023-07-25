@@ -1,19 +1,50 @@
 import "./navbar.css" 
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { logout } from "../../store/session";
+import { useState } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-function Navbar (){
 
-    const history = useHistory();
+function DropDown () {
+        const [show, setShow] = useState(false);
+        const currentUser = useSelector(state=>state.session.user);
+        
+        const dispatch = useDispatch();
+        const history = useHistory();
 
-    const dispatch = useDispatch()
+        
+        const handleLogOut = () => {
+            dispatch(logout()).then(() => history.push("/login"))
+        };
+        
+        const header = currentUser ? ` Hello ${currentUser.username}` : "Hello,sign in";
 
-    const handleLogOut = () => {
-      dispatch(logout()).then(() => history.push("/login"))
+
+        return (
+            <div className="dropDownMenu" onMouseEnter={()=> setShow(true)}
+                onMouseLeave={() => setShow(false)}>
+                {header}
+                {show && !currentUser && (
+                   <div className="dropdownLogin">
+                        <Link to="/login">Log in</Link>
+                   </div>
+                )} 
+                {show && currentUser && (
+                    <div className="dropdownLogout">
+                        <button className="logoutButton" onClick={handleLogOut}>Log Out!</button>
+                    </div>
+                )}
+            </div>
+        );
+
+
     }
-    return(
-        <>
+
+function Navbar () {
+
+    return (
+        // <>
             <div className="navbar">
                 <img className="splashLogo" src="./TheoZonLogo1.png" alt="TheoZon"></img>
 
@@ -21,23 +52,19 @@ function Navbar (){
                     <input className="searchBar" type="text" placeholder="    Search TheoZon"></input>
                     <button className="searchButton"/>
                     < a href="https://www.linkedin.com/in/theofanis-neofotistos-483b33254/" class="fa-brands fa-linkedin" style={{color: "#FEBD68",}}/>
-                    < i href="https://github.com/TheofanisNeofotistos" class="fa-brands fa-github" style={{color: "#febd68",}}/>
+                    < a href="https://github.com/TheofanisNeofotistos" class="fa-brands fa-github" style={{color: "#febd68",}}/>
                     <i class="fa-solid fa-magnifying-glass" style={{color: "",}}></i>
                 </span>
 
-                <div>
-                    <button className="logoutButton" onClick={handleLogOut}>Log Out!</button>
-                </div>
+                {/* <div> */}
+                <DropDown />
+                {/* </div> */}
                 
             </div>
-
-
-
-
-
-            
-        </>
+     
+        // </>
     )
 }
 
 export default Navbar
+

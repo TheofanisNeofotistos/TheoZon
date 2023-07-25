@@ -77,8 +77,32 @@
 }
 
 .logoutButton{
-    display: flex;
-    left: 90px;
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+.dropDownMenu{
+    position: relative;
+    color: white;
+    left: 300px;
+    margin-top: 15px;
+    background-color: pink;
+    border: 3px solid red;
+}
+
+.dropdownLogin {
+    position: absolute;
+    right: 0;
+    background-color: pink;
+    border: 3px solid red;
+
+}
+
+.dropdownLogout {
+    position: absolute;
+    right: 0;
+    background-color: pink;
+
 }
 
 

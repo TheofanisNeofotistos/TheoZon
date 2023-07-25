@@ -10,6 +10,8 @@ function LoginFormPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [errors,setErrors] = useState([])
   
   
   const sessionUser = useSelector(state => state.session.user);
@@ -18,9 +20,30 @@ function LoginFormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    return dispatch(sessionActions.login({ email, password }))
-      
+    setErrors([])
+
+    dispatch(sessionActions.login({ email, password })).catch( async (response) => {
+      let data; 
+        try {
+          data = await response.clone().json()
+        } catch {
+          // data = await response.text()
+        }
+        if(data?.errors){
+          setErrors(data.errors)
+        } else if(data){
+          setErrors([data])
+        } else{
+          setErrors([response.statusText])
+        }
+    })
   };
+
+  const getErrorsByField = (field) => {
+    return errors.find((error) => {
+      return error.includes(field)
+    })
+  }
 
   return (
     <>
@@ -35,6 +58,7 @@ function LoginFormPage() {
 
             <h2 className="formSigninHeader">Sign In</h2>
             
+              {getErrorsByField("email")? <span className="loginError">{getErrorsByField("email")}</span>: <span></span>}
 
             <p className="loginEmailHeader">Email</p>
 
@@ -43,6 +67,7 @@ function LoginFormPage() {
             </label>
             
             <p className="loginPasswordHeader">Password</p>
+              {/* {getErrorsByField("password")? <span className="loginError">{getErrorsByField("password")}</span>: <span></span>} */}
             <label >
               <input className="credentialsField" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             </label>

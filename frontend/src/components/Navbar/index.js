@@ -44,7 +44,7 @@ function DropDown () {
 function Navbar () {
 
     return (
-        // <>
+        <>
             <div className="navbar">
                 <img className="splashLogo" src="./TheoZonLogo1.png" alt="TheoZon"></img>
 
@@ -56,13 +56,13 @@ function Navbar () {
                     <i class="fa-solid fa-magnifying-glass" style={{color: "",}}></i>
                 </span>
 
-                {/* <div> */}
+            
                 <DropDown />
-                {/* </div> */}
+                
                 
             </div>
      
-        // </>
+        </>
     )
 }
 

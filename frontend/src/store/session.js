@@ -27,9 +27,14 @@ export const login = ({ email, password }) => async dispatch => {
     method: "POST",
     body: JSON.stringify({ email, password })
   });
-  const data = await response.json();
-  storeCurrentUser(data.user);
-  dispatch(setCurrentUser(data.user));
+  if(response.ok){
+    const data = await response.json();
+    if(data.errors) throw data
+      storeCurrentUser(data.user);
+      dispatch(setCurrentUser(data.user));
+  } else {
+    throw response
+  }
   return response;
 };
 
@@ -52,9 +57,14 @@ export const signup = (user) => async (dispatch) => {
       password
     })
   });
-  const data = await response.json();
-  storeCurrentUser(data.user);
-  dispatch(setCurrentUser(data.user));
+  if(response.ok){
+    const data = await response.json();
+    if(data.errors) throw data
+      storeCurrentUser(data.user);
+      dispatch(setCurrentUser(data.user));
+  } else {
+    throw response
+  }
   return response;
 };
 

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -15,6 +14,7 @@ function SignupFormPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [errors,setErrors] = useState([])
   
 
   if (sessionUser) return <Redirect to="/" />;
@@ -24,10 +24,32 @@ function SignupFormPage() {
         
         if (password === confirmPassword) {
 
-            return dispatch(sessionActions.signup({ email, username, password }))
-            
+            dispatch(sessionActions.signup({ email, username, password })).catch( async (response) => {
+              let data; 
+                try {
+                  data = await response.clone().json()
+                } catch {
+                  // data = await response.text()
+                }
+                if(data?.errors){
+                  setErrors(data.errors)
+                } else if(data){
+                  setErrors([data])
+                } else{
+                  setErrors([response.statusText])
+                }
+            })
+        } else {
+          setErrors(["Passwords must match"])
         }
+        
     };
+
+    const getErrorsByField = (field) => {
+      return errors.find((error) => {
+        return error.includes(field)
+      })
+    }
 
   return (
     <>
@@ -44,25 +66,29 @@ function SignupFormPage() {
 
             <p className="signupNameHeader">Your name</p>
             <label >
-              <input class="signupCredentialsField" placeholder="First and last name" type="text" value={username} onChange={(e) => setUsername(e.target.value)} required/>
+              <input className={getErrorsByField("Username")? "signupCredentialsFieldErrors":"signupCredentialsField"} placeholder="First and last name" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
             </label>
+            {getErrorsByField("Username")? <span className="loginError">{getErrorsByField("Username")}</span>: <span></span>}
 
             <p className="signupEmailHeader">Email</p>
             <label > 
-              <input class="signupCredentialsField" type="text"value={email} onChange={(e) => setEmail(e.target.value)} required/>
+              <input className="signupCredentialsField" type="text"value={email} onChange={(e) => setEmail(e.target.value)} />
             </label>
+            {getErrorsByField("Email")? <span className="loginError">{getErrorsByField("Email")}</span>: <span></span>}
 
             <p className="signupPasswordHeader">Password</p>
             <label >
-              <input class="signupCredentialsField" placeholder="At least 6 characters" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+              <input className="signupCredentialsField" placeholder="At least 6 characters" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
+            {getErrorsByField("Password")? <span className="loginError">{getErrorsByField("Password")}</span>: <span></span>}
 
             <p className="signupPasswordHeader">Re-enter Password</p>
             <label > 
-              <input class="signupCredentialsField" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+              <input className="signupCredentialsField" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
             </label>
+            
             <br/>
-            <button class="createButton" type="submit">Continue</button>
+            <button className="createButton" type="submit">Continue</button>
             <p className="loginAgreement">By creating an account, you agree to TheoZon's Conditions of Use and Privacy Notice .</p>
           </form>
           

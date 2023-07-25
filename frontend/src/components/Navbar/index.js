@@ -27,12 +27,12 @@ function DropDown () {
                 {header}
                 {show && !currentUser && (
                    <div className="dropdownLogin">
-                        <Link to="/login">Log in</Link>
+                        <Link  to="/login">Log in</Link>
                    </div>
                 )} 
                 {show && currentUser && (
                     <div className="dropdownLogout">
-                        <button className="logoutButton" onClick={handleLogOut}>Log Out!</button>
+                        <button className="dropdownlogoutButton" onClick={handleLogOut}>Log Out!</button>
                     </div>
                 )}
             </div>

@@ -25,6 +25,8 @@
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     border: none;
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: medium;
 }
 
 .searchButton{
@@ -39,7 +41,7 @@
 }
 
 .searchButton:hover{
-background-color: #feb04b;
+    background-color: #feb04b;
 }
 
 .fa-linkedin{
@@ -72,6 +74,11 @@ background-color: #feb04b;
     font-size: 24px;
     left: 942px;
     margin-top: 18px;
+}
+
+.logoutButton{
+    display: flex;
+    left: 90px;
 }
 
 

@@ -26,7 +26,7 @@ form {
     display: flex;
     flex-direction: column;
 
-    height: auto;
+    height: 400px;
     width: 320px;
     border: 1px solid lightgray;
     border-radius: 10px;
@@ -74,7 +74,7 @@ form {
 }
 
 .credentialsField{
-    width: 300px;
+    width: 280px;
     height: 23px;
     padding: 3px 7px;
     font-family: 'Amazon Ember', sans-serif;

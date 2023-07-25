@@ -30,8 +30,8 @@ form {
     display: flex;
     flex-direction: column;
 
-    height: auto;
-    width: 320px;
+    height: 400px;
+    width: 300px;
     border: 1px solid lightgray;
     border-radius: 10px;
     padding: 10px 20px;
@@ -41,6 +41,10 @@ form {
 
    
     
+}
+
+.createAccountHeader{
+    font-size: 27px;
 }
 
 .formSigninHeader{
@@ -78,9 +82,9 @@ form {
 }
 
 .signupCredentialsField{
-    width: 300px;
+    width: 280px;
     height: 23px;
-    /* padding: 3px 7px; */
+    padding: 3px 7px;
     font-family: 'Amazon Ember', sans-serif;
     
 }

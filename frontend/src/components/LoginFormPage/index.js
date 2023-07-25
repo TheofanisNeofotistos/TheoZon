@@ -47,10 +47,7 @@ function LoginFormPage() {
               <input className="credentialsField" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             </label>
 
-            <br/>
-
             <button className="signinButton" type="submit">Sign In</button>
-            <br/>
             <button className="signinButton" type="submit">Demo User</button>
             <br/>
             <p className="loginAgreement">By continuing, you agree to TheoZon's Conditions of Use and Privacy Notice .</p>

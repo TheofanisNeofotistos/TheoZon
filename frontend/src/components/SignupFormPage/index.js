@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ function SignupFormPage() {
 
           <form onSubmit={handleSubmit}>
 
-            <h2>Create Account</h2>
+            <h2 className="createAccountHeader">Create Account</h2>
 
             <p className="signupNameHeader">Your name</p>
             <label >
@@ -61,7 +62,6 @@ function SignupFormPage() {
               <input class="signupCredentialsField" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
             </label>
             <br/>
-
             <button class="createButton" type="submit">Continue</button>
             <p className="loginAgreement">By creating an account, you agree to TheoZon's Conditions of Use and Privacy Notice .</p>
           </form>

@@ -1,4 +1,5 @@
 .splashLogo{
+    margin-left: 10px;
     width: 120px;
 }
 
@@ -7,16 +8,70 @@
     height: 60px;
     background-color: #131921;
     padding: 0;
+    display: flex;
 }
 
 .splashLogo{
-    display: flex;
+    height: 60px;
     justify-content: left;
 }
 
 .searchBar{
-    display: flex;
     justify-content: center;
+    height: 40px;
+    width: 600px;
+    margin-top: 8px;
+    margin-left: 200px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border: none;
+}
+
+.searchButton{
+    position: absolute;
+    height: 42px;
+    width: 40px;
+    margin-top: 8px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: none;
+    background-color: #FEBD68;
+}
+
+.searchButton:hover{
+background-color: #feb04b;
+}
+
+.fa-linkedin{
+    position: absolute;
+    font-size: 48px;
+    left: 1050px;
+    margin-top: 5px;
+    
+}
+
+.fa-linkedin:hover{
+   
+    border: 1px solid white;
+    
+}
+
+.fa-github{
+    position: absolute;
+    font-size: 48px;
+    left: 1130px;
+    margin-top: 5px;
+}
+
+.fa-github:hover{
+    border: 1px solid white;
+}
+
+.fa-magnifying-glass{
+    position: absolute;
+    font-size: 24px;
+    left: 942px;
+    margin-top: 18px;
 }
 
 

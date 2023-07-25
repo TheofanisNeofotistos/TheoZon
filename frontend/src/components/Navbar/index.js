@@ -2,9 +2,19 @@ import "./navbar.css"
 
 function Navbar (){
     return(
-        <header className="navbar">
-            <img className="splashLogo" src="./TheoZonLogo1.png" alt="TheoZon"></img>
-        </header>
+        <>
+            <div className="navbar">
+                <img className="splashLogo" src="./TheoZonLogo1.png" alt="TheoZon"></img>
+                <input className="searchBar" type="text"></input>
+                
+            </div>
+
+
+
+
+
+            
+        </>
     )
 }
 

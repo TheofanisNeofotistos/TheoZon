@@ -1,15 +1,17 @@
 class Api::ProductsController < ApplicationController
     def show 
-        @product = Product.select(:id,:item_name,:item_description,:item_price)
+        @product = Product. find_by(id: params[:id])
 
         render :show 
     end 
 
     def index 
-        @products = Product.select(:id,:item_name,:item_description,:item_price)
+        @products = Product.all
 
         render :index 
     end 
+
+    
 
     
 end

@@ -2,6 +2,9 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchProduct } from "../../store/products"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
+import "./productsShow.css"
+import Navbar from "../Navbar";
+
 
 function ProductShow (props){
 
@@ -17,11 +20,14 @@ function ProductShow (props){
         return null
     }
     return(
-        <ul>
-            <li>{product.itemName}</li>
-            <li>{product.itemDescription}</li>
-            <li>{product.itemPrice}</li>
-        </ul>
+        <>
+            <Navbar/>
+            <ul>
+                <li>{product.itemName}</li>
+                <li>{product.itemDescription}</li>
+                <li>{product.itemPrice}</li>
+            </ul>
+        </>
     )
 }
 

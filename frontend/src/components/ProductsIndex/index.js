@@ -2,6 +2,9 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchProducts } from "../../store/products"
 import ProductIndexItem from "./productIndexItem"
+import "./productsIndexItem.css"
+
+
 
 
 function ProductsIndex(){
@@ -19,7 +22,9 @@ function ProductsIndex(){
     return (
 
         <>
-            {Object.values(products).map((product)=> <ProductIndexItem product = {product}/>)}
+            <div className="productIndexContainer">
+                {Object.values(products).map((product)=> <ProductIndexItem key={product.id} product = {product}/>)}
+            </div>
         </>
     )
 }

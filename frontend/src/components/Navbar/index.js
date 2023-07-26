@@ -27,7 +27,7 @@ function DropDown () {
                 {header}
                 {show && !currentUser && (
                    <div className="dropdownLogin">
-                        <Link  to="/login">Log in</Link>
+                        <Link className="dropdownLoginButton"  to="/login">Log in</Link>
                    </div>
                 )} 
                 {show && currentUser && (
@@ -45,6 +45,7 @@ function Navbar () {
 
     return (
         <>
+        
             <div className="navbar">
                 <img className="splashLogo" src="./TheoZonLogo1.png" alt="TheoZon"></img>
 

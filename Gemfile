@@ -46,6 +46,8 @@ group :development, :test do
   
 end
 
+gem "aws-sdk-s3"
+
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"

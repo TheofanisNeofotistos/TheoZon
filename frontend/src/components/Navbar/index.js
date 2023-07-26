@@ -27,7 +27,7 @@ function DropDown () {
                 {header}
                 {show && !currentUser && (
                    <div className="dropdownLogin">
-                        <Link className="dropdownLoginButton"  to="/login">Log in</Link>
+                        <Link className="dropdownLoginButton" to="/login">Log in</Link>
                    </div>
                 )} 
                 {show && currentUser && (

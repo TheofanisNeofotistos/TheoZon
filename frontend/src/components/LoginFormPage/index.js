@@ -83,6 +83,9 @@ function LoginFormPage() {
             <p className="loginAgreement">By continuing, you agree to TheoZon's Conditions of Use and Privacy Notice .</p>
 
           </form>
+          <br/>
+          <p className="newToTheoZon">New to TheoZon?</p>
+          <Link className="signupLink" to="/signup"> Create your TheoZon Account</Link>
         </div>
 
       

@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 .splashLogo{
     margin-left: 10px;
     width: 120px;
@@ -96,25 +99,43 @@
 
 .dropdownLogin {
     position: absolute;
-    top: 40px;
-    width: 200px;
-    height: 100px;
-    right: 0;
+    right: -90px;
     background-color: white;
-    border: 3px solid black;
+    margin-top: 10px;
+    height: 100px;
+    width: 300px;
+    border: 1px solid black;
 
 }
 
-a{
+
+.dropdownLoginButton{
+    color: black;
+    text-align: center;
+    position: absolute;
     text-decoration: none;
-}
-
-.dropdownloginButton{
-    margin-left: 30px;
+    margin-top: 30px;
+    margin-left: 50px;
     background-color: #FFD712;
     border-radius: 4px;
     border: 1px solid gray;
     width: 200px;
+    height: 30px;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.dropdownLoginButton:hover{
+    color: black;
+    text-align: center;
+    position: absolute;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-left: 50px;
+    background-color: #f5d223;
+    border-radius: 4px;
+    border: 1px solid gray;
+    width: 200px;
+    height: 30px;
     font-family: 'Amazon Ember', sans-serif;
 }
 
@@ -122,10 +143,9 @@ a{
 
 .dropdownLogout {
     position: absolute;
-    right: 0;
+    right: -90px;
     background-color: white;
     margin-top: 10px;
-    margin-left: 20px;
     height: 100px;
     width: 300px;
     border: 1px solid black;
@@ -134,8 +154,20 @@ a{
 
 .dropdownlogoutButton{
     margin-top: 30px;
-    margin-left: 30px;
+    margin-left: 50px;
     background-color: #FFD712;
+    border-radius: 4px;
+    border: 1px solid gray;
+    width: 200px;
+    height: 30px;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.dropdownlogoutButton:hover{
+   
+    margin-top: 30px;
+    margin-left: 50px;
+    background-color: #f5d223;
     border-radius: 4px;
     border: 1px solid gray;
     width: 200px;

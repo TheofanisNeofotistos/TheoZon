@@ -63,8 +63,8 @@ form {
 }
 
 .loginAgreement{
-   font-size: smaller;
-   font-family: 'Amazon Ember', sans-serif;
+    font-size: smaller;
+    font-family: 'Amazon Ember', sans-serif;
 }
 
 .loginEmail{
@@ -78,4 +78,38 @@ form {
     height: 23px;
     padding: 3px 7px;
     font-family: 'Amazon Ember', sans-serif;
+}
+
+.credentialsField:focus{
+    background-color: #F7FEFF;
+    border-color: #007185;
+    box-shadow: 0 0 0 2px #c8f3fa,0 1px 2px rgba(15,17,17,.15) inset
+}
+
+.signupLink{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 30px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid gray;
+    width: 340px;
+    font-size: 14px;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.signupLink:hover{
+   background-color: lightgray;
+}
+
+.newToTheoZon{
+    color: gray;
+    display: flex;
+    justify-content: center;
 }

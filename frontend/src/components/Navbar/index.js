@@ -54,7 +54,7 @@ function Navbar () {
                     <button className="searchButton"/>
                     < a href="https://www.linkedin.com/in/theofanis-neofotistos-483b33254/" class="fa-brands fa-linkedin" style={{color: "#FEBD68",}}> </a>
                     < a href="https://github.com/TheofanisNeofotistos" class="fa-brands fa-github" style={{color: "#febd68",}}> </a>
-                    <i class="fa-solid fa-magnifying-glass" style={{color: "",}}></i>
+                    <i className="fa-solid fa-magnifying-glass" style={{color: "",}}></i>
                 </span>
 
             

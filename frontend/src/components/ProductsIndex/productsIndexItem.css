@@ -18,6 +18,8 @@
 
 .productName{
     font-family: 'Amazon Ember', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
 }
 
 .productDescription{
@@ -26,10 +28,12 @@
 
 .productPrice{
     font-family: 'Amazon Ember', sans-serif;
+    font-size: 50px;
+    
 }
 
 .productPhoto{
-    width: 300px;
+    width: 250px;
 }
 
 .ResultsHeader{

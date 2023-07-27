@@ -1,0 +1,173 @@
+.productIndexContainer{
+    flex-wrap: wrap;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.containerForEachItem{
+    border: 1px solid lightgray;
+    background-color: #F7F7F7;
+}
+
+.productIndexItem{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.itemInfo{
+    margin-top: 100px;
+}
+.showProductName{
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: 30px;
+}
+
+.showProductDescription{
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.showProductPrice{
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: x-large;
+}
+
+.showDelivery{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.productPhotoShow{
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 250px;
+}
+
+.addToCartArea{
+    margin-top: 100px;
+    margin-right: 20px;
+    height: 250px;
+    width: 300px;
+    border: 3px solid lightgray;
+    border-radius: 10px;
+}
+
+.showpageContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.showDivider {
+    width: 600px;
+    height: 2px;
+    border-top: 1px solid #BBBFBF;
+    margin: 10px 0 10px;
+}
+
+.addToCartButtonShow{
+    margin-top: 15px;
+    margin-left: 25px;
+    background-color: #FFD712;
+    border-radius: 20px;
+    border: 1px solid gray;
+    height: 30px;
+    width: 250px;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.addToCartButtonShow:hover{
+    background-color: #f5d223 ;
+}
+
+
+
+.buyNowButtonShow{
+    margin-top: 10px;
+    margin-left: 25px;
+    background-color: #FFA41C;
+    border-radius: 20px;
+    border: 1px solid gray;
+    height: 30px;
+    width: 250px;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.buyNowButtonShow:hover{
+   background-color: #ee9522;
+}
+
+.freeReturnsShow{
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #2C95C4;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.buyNewShow{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: 'Amazon Ember', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+
+.buyNewSpan{
+    margin-top: 10px;
+    display: flex;
+    
+}
+
+.cartAreaPrice{
+    font-family: 'Amazon Ember', sans-serif; 
+}
+
+.cartAreaMoney{
+    margin-left: 40px;
+    display: flex;
+    font-size: x-large;
+}
+
+.cartMoneySymbol{
+    font-family: 'Amazon Ember', sans-serif; 
+    font-size: 13px;
+}
+
+.cartMoneyZeros{
+    font-family: 'Amazon Ember', sans-serif; 
+    font-size: 13px;
+}
+
+.aboutThisItemShow{
+    font-family: 'Amazon Ember', sans-serif; 
+    font-size: medium;
+    font-weight: bold;
+}
+
+.quantityCartShow{
+    margin-left: 10px;
+}
+
+
+
+.showAreaMoney{
+    display: flex;
+    font-size: x-large;
+    font-family: 'Amazon Ember', sans-serif; 
+}
+
+.showMoneySymbol{
+    font-family: 'Amazon Ember', sans-serif; 
+    font-size: 13px;
+}
+
+.showMoneyZeros{
+    font-family: 'Amazon Ember', sans-serif; 
+    font-size: 13px;
+}
+
+.inStock{
+    margin-left: 10px;
+    color: green;
+    font-family: 'Amazon Ember', sans-serif; 
+}

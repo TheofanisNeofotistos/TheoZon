@@ -7,11 +7,10 @@ function ProductIndexItem({product}) {
             
             <ul className="containerForEachItem">
                 <li className="productIndexItem">
+                    <Link to={`/products/${product.id}`}><img className="productPhoto"src={product.photoUrl} alt="product_image"/></Link>
                     <p className="productName">{product.itemName}</p>
-                    <p className="productDescription">{product.itemDescription}</p>
                     <p className="productPrice">${product.itemPrice}</p>
-                    <img className="productPhoto"src={product.photoUrl} alt="product_image"/>
-                    <Link to={`/products/${product.id}`}>{product.itemName}</Link>
+                    {/* <Link to={`/products/${product.id}`}>{product.itemName}</Link> */}
                 </li>
             </ul>
         </>

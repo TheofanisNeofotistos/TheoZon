@@ -1,5 +1,41 @@
-div.productIndexItemContainer{
+.productIndexContainer{
+    flex-wrap: wrap;
+    margin: auto;
     display: flex;
+    justify-content: space-evenly;
+}
+
+.containerForEachItem{
+    border: 1px solid lightgray;
+    background-color: #F7F7F7;
+}
+
+.productIndexItem{
+    display: flex;
+    flex-direction: column;
 
 }
 
+.productName{
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.productDescription{
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.productPrice{
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.productPhoto{
+    width: 300px;
+}
+
+.ResultsHeader{
+    font-size: larger;
+    margin-left: 200px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Amazon Ember', sans-serif;
+}

@@ -4,11 +4,13 @@ import "./productsIndexItem.css"
 function ProductIndexItem({product}) {
     return(
         <>
-            <ul className="">
+            
+            <ul className="containerForEachItem">
                 <li className="productIndexItem">
-                    <p>{product.itemName}</p>
-                    <p>{product.itemDescription}</p>
-                    <p>{product.itemPrice}</p>
+                    <p className="productName">{product.itemName}</p>
+                    <p className="productDescription">{product.itemDescription}</p>
+                    <p className="productPrice">${product.itemPrice}</p>
+                    <img className="productPhoto"src={product.photoUrl} alt="product_image"/>
                     <Link to={`/products/${product.id}`}>{product.itemName}</Link>
                 </li>
             </ul>

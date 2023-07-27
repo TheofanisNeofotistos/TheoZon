@@ -22,6 +22,8 @@ function ProductsIndex(){
     return (
 
         <>
+            <h1 className="ResultsHeader">Results</h1>
+            <br/>
             <div className="productIndexContainer">
                 {Object.values(products).map((product)=> <ProductIndexItem key={product.id} product = {product}/>)}
             </div>

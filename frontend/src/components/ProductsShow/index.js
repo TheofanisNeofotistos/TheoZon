@@ -49,7 +49,7 @@ function ProductShow (props){
                 <div className="addToCartArea">
 
                     <span className="buyNewSpan">
-                        <p className="buyNewShow">Buy New: </p>
+                        <p className="buyNewShow">Buy New:</p>
                         <span className="cartAreaMoney">
                             <p className="cartMoneySymbol">$</p>
                             <p className="cartAreaPrice">{product.itemPrice}</p>
@@ -91,6 +91,28 @@ function ProductShow (props){
                     <button className="buyNowButtonShow">Buy Now</button>
 
                 </div>
+
+            </div>
+
+            <div className="showpageReviewContainer">
+
+                <div className="showPageBreak"></div>
+
+                <span className="showPageReviewRankings">
+                    <p>Customer Reviews</p>
+
+                    <span className="starRanking">
+                        <p>5 star</p>
+                        <button></button>    
+                    </span>
+                    
+                    <p>4 star</p>
+                    <p>3 star</p>
+                    <p>2 star</p>
+                    <p>1 star</p>
+                </span>
+
+
             </div>
         </>
     )

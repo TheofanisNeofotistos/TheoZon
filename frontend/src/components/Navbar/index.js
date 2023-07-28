@@ -47,7 +47,7 @@ function Navbar () {
         <>
         
             <div className="navbar">
-                <img className="splashLogo" src="/TheoZonLogo1.png" alt="TheoZon"></img>
+                <Link to="/"><img className="splashLogo" src="/TheoZonLogo1.png" alt="TheoZon"></img></Link>
 
                 <span className="searchBarContainer">
                     <input className="searchBar" type="text" placeholder="    Search TheoZon"></input>

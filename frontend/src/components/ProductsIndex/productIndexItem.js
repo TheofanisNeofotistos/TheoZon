@@ -8,8 +8,16 @@ function ProductIndexItem({product}) {
             <ul className="containerForEachItem">
                 <li className="productIndexItem">
                     <Link to={`/products/${product.id}`}><img className="productPhoto"src={product.photoUrl} alt="product_image"/></Link>
-                    <p className="productName">{product.itemName}</p>
-                    <p className="productPrice">${product.itemPrice}</p>
+                    <div className="productIndexDetailsContainer">
+                        <p className="productName">{product.itemName}</p>
+                        <br/>
+                        <span className="productIndexMoney">
+                                <p className="productIndexMoneySymbol">$</p>
+                                <p className="productIndexPrice">{product.itemPrice}</p>
+                                <p className="productIndexMoneyZeros">00</p>
+                        </span>
+
+                    </div>
                     {/* <Link to={`/products/${product.id}`}>{product.itemName}</Link> */}
                 </li>
             </ul>

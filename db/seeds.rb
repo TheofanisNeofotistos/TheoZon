@@ -39,7 +39,7 @@ product2 = Product.create!(
     category: "Electronics"
 )
 
-# product2.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/demonslayerPhoto.jpeg"),filename: "demonslayer.jpg")
+product2.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/applewatch.jpg"),filename: "applewatch.jpg")
 
 
 product3 = Product.create!(
@@ -87,6 +87,8 @@ product3 = Product.create!(
     category: "Electronics"
 )
 
+product3.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/kindle.jpg"),filename: "kindle.jpg")
+
 
 product4 = Product.create!(
     item_name: "Reebok Unisex-Adult Nano X3 Sneaker",
@@ -95,12 +97,16 @@ product4 = Product.create!(
     category: "Fitness"
 )
 
+product4.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/nanox3.jpg"),filename: "nanox3.jpg")
+
 product5 = Product.create!(
     item_name: "Herschel Supply Co. Tech Daypack Mid Raven Crosshatch One Size",
     item_description: "The perfect bag for day trips is here! Get ready in a flash with the crucial Herschel Supply Co. Tech Daypack Mid. Classic lightweight daypack design. Constructed in a durable polyester ripstop. Single front pocket for additional storage. Internal storage pockets with zipper closure. Additional slip-pockets within main compartment for extra stowaway space. Adjustable webbing straps for a custom fit. Exposed plastic zippers. Signature solid-color polyester lining. Spot clean.",
     item_price: 130,
     category: "Apparel"
 )
+
+product5.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/backpack.webp"),filename: "backpack.jpg")
 
 product6 = Product.create!(
     item_name: "Unisex UA SlipSpeed™ Training Shoes",
@@ -109,6 +115,8 @@ product6 = Product.create!(
     category: "Apparel"
 )
 
+product6.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/UA+sneakers.webp"),filename: "uasneakers.jpg")
+
 product7 = Product.create!(
     item_name: "True Classic Tees Premium Fitted Men's T-Shirts - 4 Pack Crew Neck",
     item_description: "True Classic makes quality clothing for real people. Based in Los Angeles, CA, we bring the best possible apparel to your doorstep — for a fraction of the price. With 75,000+ four-star reviews, we leave no one behind in the quest for the perfect fit. It’s why we donate over 15,000 t-shirts a month to communities in need. We craft our products with feel-good fabrics and a perfect fit formula you can trust, so you can go about your day confident & comfortable.",
@@ -116,12 +124,16 @@ product7 = Product.create!(
     category: "Apparel"
 )
 
+product7.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/tshirts.jpg"),filename: "tshirts.jpg")
+
 product8 = Product.create!(
     item_name: "Giant Unicorn Inflatable Bounce House with Slide | 8.5 FT x 9 FT x 11.5 FT | Bouncy House for Kids Outdoor with Trampoline and Slide | Heavy Duty Easy to Set Up | Bounce House with Blower & Carry Bag",
     item_description: "Once inflated, our unicorn bounce house can hold up to 200 lbs for a safe time while kids jump around! Our house has been tested for quality and is durable enough to support multiple kids playing in the bounce house.",
     item_price: 400,
     category: "Fitness"
 )
+
+product8.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/bounceyhouse.jpg"),filename: "bouncyhouse.jpg")
 
 product9 = Product.create!(
     item_name: "NBA Street V3 - PlayStation 2 ",
@@ -134,12 +146,16 @@ product9 = Product.create!(
     category: "Electronics"
 )
 
+product9.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/nbastreet3.webp"),filename: "nbastreet.jpg")
+
 product10 = Product.create!(
     item_name: "Superocean Héritage B20 Automatic 42",
     item_description: "Stylish, reliable, and robust, the Superocean Héritage II is a practical everyday companion. Its stainless-steel case with screwed-in case back has a diameter of 42 millimeters and measures 14.3 millimeters thick, while offering water resistance of up to 20 bar. The rubber strap has a 1950s air about it. Meanwhile, the watch's blue dial is lined with gold hour markers, making it a veritable eye-catcher for everyday wear.",
     item_price: 6500,
     category: "Apparel"
 )
+
+product10.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/watch.webp"),filename: "watch.jpg")
 
 
 

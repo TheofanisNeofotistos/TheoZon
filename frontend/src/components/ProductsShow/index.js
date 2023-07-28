@@ -43,8 +43,11 @@ function ProductShow (props){
                         </span>
                         <div className="showDivider"/>
                         <p className="aboutThisItemShow">About this product</p>
+                        <br/>
                         <p className="showProductDescription">{product.itemDescription}</p>
                 </div>
+
+            
 
                 <div className="addToCartArea">
 

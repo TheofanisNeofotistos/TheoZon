@@ -6,34 +6,41 @@
 }
 
 .containerForEachItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid lightgray;
     background-color: #F7F7F7;
+    margin-bottom: 30px;
 }
 
 .productIndexItem{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 400px;
+    
 
 }
 
 .productName{
     font-family: 'Amazon Ember', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: normal;
+    text-align: center;
+    margin:10 auto;
 }
 
 .productDescription{
     font-family: 'Amazon Ember', sans-serif;
 }
 
-.productPrice{
-    font-family: 'Amazon Ember', sans-serif;
-    font-size: 50px;
-    
-}
+
 
 .productPhoto{
+    
     width: 250px;
+   
 }
 
 .ResultsHeader{
@@ -41,6 +48,25 @@
     margin-left: 200px;
     margin-top: 10px;
     font-weight: bold;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.productIndexDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F7F7;
+}
+
+.productIndexMoney{
+    display: flex;
+}
+
+.productIndexMoneySymbol{
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.productIndexPrice{
+    font-size: 30px;
     font-family: 'Amazon Ember', sans-serif;
 }
 

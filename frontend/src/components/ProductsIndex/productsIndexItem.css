@@ -7,6 +7,7 @@
 
 .containerForEachItem{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid lightgray;
@@ -15,10 +16,12 @@
 }
 
 .productIndexItem{
+
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 400px;
+    justify-content: flex-start;
     
 
 }
@@ -43,6 +46,10 @@
    
 }
 
+.productPhotoContainer{
+    background-color: white;
+}
+
 .ResultsHeader{
     font-size: larger;
     margin-left: 200px;
@@ -54,11 +61,13 @@
 .productIndexDetailsContainer{
     display: flex;
     flex-direction: column;
+    /* width: 200px; */
     background-color: #F7F7F7;
 }
 
 .productIndexMoney{
     display: flex;
+    justify-content: center;
 }
 
 .productIndexMoneySymbol{

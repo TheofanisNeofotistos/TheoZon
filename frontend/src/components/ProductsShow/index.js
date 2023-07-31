@@ -90,9 +90,10 @@ function ProductShow (props){
 
                     <br/>
                     
-                    <button className="addToCartButtonShow">Add to Cart</button>
-                    <button className="buyNowButtonShow">Buy Now</button>
-
+                    <div className="addToCartButtonArea">
+                        <button className="addToCartButtonShow">Add to Cart</button>
+                        <button className="buyNowButtonShow">Buy Now</button>
+                    </div>
                 </div>
 
             </div>

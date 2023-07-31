@@ -1,6 +1,6 @@
 class Api::CartsController < ApplicationController
     def create 
-        
+
     end 
 
     def destroy
@@ -14,4 +14,8 @@ class Api::CartsController < ApplicationController
     def show 
 
     end 
+
+    def cart_params
+        
+    end
 end

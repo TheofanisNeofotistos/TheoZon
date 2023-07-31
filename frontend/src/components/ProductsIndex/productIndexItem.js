@@ -6,8 +6,10 @@ function ProductIndexItem({product}) {
         <>
             
             <ul className="containerForEachItem">
-                <li className="productIndexItem">
+                <div className="productPhotoContainer">
                     <Link to={`/products/${product.id}`}><img className="productPhoto"src={product.photoUrl} alt="product_image"/></Link>
+                </div>
+                <li className="productIndexItem">
                     <div className="productIndexDetailsContainer">
                         <p className="productName">{product.itemName}</p>
                         <br/>

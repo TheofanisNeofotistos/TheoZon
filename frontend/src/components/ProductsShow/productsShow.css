@@ -69,7 +69,8 @@
 
 .addToCartButtonShow{
     margin-top: 15px;
-    margin-left: 25px;
+    margin-left: 13px;
+    margin-right: 10px;
     background-color: #FFD712;
     border-radius: 20px;
     border: 1px solid gray;
@@ -86,7 +87,7 @@
 
 .buyNowButtonShow{
     margin-top: 10px;
-    margin-left: 25px;
+    margin-left: 13px;
     background-color: #FFA41C;
     border-radius: 20px;
     border: 1px solid gray;
@@ -97,6 +98,10 @@
 
 .buyNowButtonShow:hover{
    background-color: #ee9522;
+}
+
+.addToCartButtonArea{
+    
 }
 
 .freeReturnsShow{

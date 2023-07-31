@@ -1,11 +1,12 @@
+import { getCartItems , resetCart} from "./cart.js";
 import csrfFetch from "./csrf.js";
 
-const SET_CURRENT_USER = 'session/setCurrentUser';
+export const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
 
 const setCurrentUser = (user) => ({
   type: SET_CURRENT_USER,
-  payload: user
+  payload: user 
 });
 
 const removeCurrentUser = () => ({
@@ -17,8 +18,9 @@ const storeCSRFToken = response => {
   if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
 }
 
-const storeCurrentUser = user => {
-  if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
+const storeCurrentUser = (user) => {
+  if (user) 
+  {sessionStorage.setItem("currentUser", JSON.stringify(user))}
   else sessionStorage.removeItem("currentUser");
 }
 
@@ -32,6 +34,7 @@ export const login = ({ email, password }) => async dispatch => {
     if(data.errors) throw data
       storeCurrentUser(data.user);
       dispatch(setCurrentUser(data.user));
+      dispatch(getCartItems())
   } else {
     throw response
   }
@@ -74,6 +77,7 @@ export const logout = () => async (dispatch) => {
   });
   storeCurrentUser(null);
   dispatch(removeCurrentUser());
+  dispatch(resetCart())
   return response;
 };
 
@@ -86,7 +90,7 @@ const sessionReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case SET_CURRENT_USER:
-      return { ...newState, user: action.payload };
+      return { ...newState, user: action.payload  };
     case REMOVE_CURRENT_USER:
       return { ...newState, user: null };
     default:

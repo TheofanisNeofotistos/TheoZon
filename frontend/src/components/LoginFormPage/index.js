@@ -40,6 +40,10 @@ function LoginFormPage() {
     })
   };
 
+  const handleDemoLogin = () => {
+    dispatch(sessionActions.login({email:"demo@demo.com", password:"password"}))
+  }
+
   const getErrorsByField = (field) => {
     if(errors){
       return errors.find((error) => {
@@ -78,7 +82,7 @@ function LoginFormPage() {
             </label>
 
             <button className="signinButton" type="submit">Sign In</button>
-            <button className="signinButton" type="submit">Demo User</button>
+            <button className="signinButton" onClick={handleDemoLogin} type="submit">Demo User</button>
             <br/>
             <p className="loginAgreement">By continuing, you agree to TheoZon's Conditions of Use and Privacy Notice .</p>
 

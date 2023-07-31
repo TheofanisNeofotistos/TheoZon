@@ -11,7 +11,4 @@ class Api::ProductsController < ApplicationController
         render :index 
     end 
 
-    
-
-    
 end

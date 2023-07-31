@@ -17,6 +17,8 @@ function ProductShow (props){
     const productId = useParams().productId
     const product = useSelector(state => state.products?.[productId])
 
+    
+
     useEffect(()=>{
         dispatch(fetchProduct(productId))
     },[productId])
@@ -92,7 +94,7 @@ function ProductShow (props){
                     
                     <div className="addToCartButtonArea">
                         <button className="addToCartButtonShow">Add to Cart</button>
-                        <button className="buyNowButtonShow">Buy Now</button>
+                        {/* <button className="buyNowButtonShow">Buy Now</button> */}
                     </div>
                 </div>
 

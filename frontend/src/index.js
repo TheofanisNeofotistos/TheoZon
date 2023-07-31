@@ -34,13 +34,13 @@ const renderApplication = () => {
   );
 }
 
+store.dispatch(sessionActions.restoreSession()).then(renderApplication);
 
-
-if (
-  sessionStorage.getItem("currentUser") === null ||
-  sessionStorage.getItem("X-CSRF-Token") === null 
-) {
-  store.dispatch(sessionActions.restoreSession()).then(renderApplication);
-} else {
-  renderApplication();
-}
+// if (
+//   sessionStorage.getItem("currentUser") === null ||
+//   sessionStorage.getItem("X-CSRF-Token") === null 
+// ) {
+//   store.dispatch(sessionActions.restoreSession()).then(renderApplication);
+// } else {
+//   renderApplication();
+// };

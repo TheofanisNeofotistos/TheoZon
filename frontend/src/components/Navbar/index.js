@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom"
 import { logout } from "../../store/session";
 import { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Cart from "../Cart";
+
 
 
 function DropDown () {
@@ -59,6 +61,8 @@ function Navbar () {
 
             
                 <DropDown />
+
+                <Cart/>
                 
                 
             </div>

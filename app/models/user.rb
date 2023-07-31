@@ -22,7 +22,10 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: { in: 6..255 }, allow_nil: true
 
-    has_many :carts
+    has_many :cart_items,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Cart
     
     before_validation :ensure_session_token
 

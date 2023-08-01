@@ -12,6 +12,8 @@ a{
     background-color: #131921;
     padding: 0;
     display: flex;
+    position: relative;
+    /* justify-content: space-evenly; */
 }
 
 .splashLogo{
@@ -179,6 +181,10 @@ a{
     font-family: 'Amazon Ember', sans-serif;
 }
 
+.cartContainer{
+    background-color: aqua;
+    justify-content: flex-end;
+}
 
 
 

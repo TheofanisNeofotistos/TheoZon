@@ -4,7 +4,7 @@ import { fetchProduct } from "../../store/products"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import "./productsShow.css"
 import Navbar from "../Navbar";
-import { addCartItem } from "../../store/cart"
+import { addCartItem, getCartItems } from "../../store/cart"
 
 
 
@@ -23,6 +23,12 @@ function ProductShow (props){
     useEffect(()=>{
         dispatch(fetchProduct(productId))
     },[productId])
+
+    useEffect(()=>{
+        dispatch(getCartItems(currentUser.id))
+    },[])
+
+
 
     if(!product){
         return null

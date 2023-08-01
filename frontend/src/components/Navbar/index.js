@@ -59,10 +59,14 @@ function Navbar () {
                     <i className="fa-solid fa-magnifying-glass" style={{color: "",}}></i>
                 </span>
 
+                <div></div>
+
             
                 <DropDown />
 
-                <Cart/>
+                <div className="cartContainer">
+                    <Cart/>
+                </div>
                 
                 
             </div>

@@ -8,6 +8,7 @@ import { addCartItem, getCartItems } from "../../store/cart"
 
 
 
+
 function ProductShow (props){
     const currentUser = useSelector(state=>state.session.user);
 
@@ -21,12 +22,14 @@ function ProductShow (props){
         dispatch(addCartItem(productId))
     }
     useEffect(()=>{
+        // debugger 
         dispatch(fetchProduct(productId))
+        dispatch(getCartItems(currentUser.id))
     },[productId])
 
-    useEffect(()=>{
-        dispatch(getCartItems(currentUser.id))
-    },[])
+    // useEffect(()=>{
+        
+    // },[productId])
 
 
 

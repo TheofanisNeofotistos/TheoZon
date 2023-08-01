@@ -65,7 +65,7 @@ function Navbar () {
                 <DropDown />
 
                 <div className="cartContainer">
-                    <Cart/>
+                   <Link to="/cart"> <i className="fa-solid fa-cart-shopping fa-xl" style={{color: "#ffffff"}}></i></Link>
                 </div>
                 
                 

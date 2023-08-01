@@ -28,8 +28,9 @@ export const resetCart = ()=> {
 
 
 export const getCartItems = (userId) => async (dispatch) => {
-
-    const response = await csrfFetch(`api/users/${userId}`)
+    // debugger
+    const response = await csrfFetch(`/api/users/${userId}`)
+    // debugger
     const data = await response.json()
     dispatch(recieveCart(data.cart))
     return response

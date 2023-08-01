@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage";
 import ProductShow from "./components/ProductsShow";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/session";
+import Cart from "./components/Cart";
 
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
 
         <Route path="/products/:productId">
           <ProductShow/>
+        </Route>
+
+        <Route path="/cart">
+          <Cart/>
         </Route>
 
         <Route path="/"><HomePage/></Route>

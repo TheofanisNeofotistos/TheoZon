@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useSelector ,useDispatch} from "react-redux";
 import { getCartItems } from "../../store/cart";
+import { fetchProducts } from "../../store/products";
+import CartIndexItem from "./cartIndexItem";
 
 
 export default function Cart(){
@@ -9,26 +11,33 @@ export default function Cart(){
     const cart = useSelector(state => state.cart)
     const products = useSelector(state => state.products)
 
+    // const cartItem = Object.values(products).filter((product)=> productId === product.id)
+
+    
+
     const dispatch = useDispatch()
 
     useEffect(()=>{
         dispatch(getCartItems(currentUser.id))
-    },[])
+        dispatch(fetchProducts())
+    },[currentUser.cart])
 
-    if(currentUser){
-        return(
-            <>
-            {/* <h1>CART</h1> */}
-            <i className="fa-solid fa-cart-shopping fa-xl" style={{color: "#ffffff"}}></i>
-            {/* <p>{Object.values(cart).map((item) => {return products[item.productId]?.name})}</p> */}
-            </>
-        )
-    } else{
-        return(
-            <>
-                {/* <h1>CART</h1> */}
-                <i className="fa-solid fa-cart-shopping fa-xl" style={{color: "#ffffff"}}></i>
-            </>
-        )
+    if(!products){
+        return null
     }
+
+    
+
+    // console.log(allCartItems)
+    // console.log(productInfo)
+    // debugger
+    return(
+        <>
+        <h1 className="shoppingCartHeader">Shopping Cart</h1>
+        <br/>
+        <div className="cartIndexContainer">
+            {Object.values(cart).map((item)=> <CartIndexItem key={item.productId} products ={products} productId = {item.productId}/>)}
+        </div>
+    </>
+    )
 }

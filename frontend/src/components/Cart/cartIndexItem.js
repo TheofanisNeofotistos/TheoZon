@@ -10,7 +10,7 @@ function CartIndexItem({productId,products}) {
             
             <ul className="containerForEachCartItem">
                 <div className="CartPhotoContainer">
-                    <Link to={`/products/${product.id}`}><img className="productPhoto"src={product[0].photoUrl} alt="product_image"/></Link>
+                    <Link to={`/products/${product[0].id}`}><img className="productPhoto"src={product[0].photoUrl} alt="product_image"/></Link>
                 </div>
                 <li className="cartProductIndexItem">
                     <div className="cartProductIndexDetailsContainer">

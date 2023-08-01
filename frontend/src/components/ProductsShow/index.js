@@ -4,11 +4,11 @@ import { fetchProduct } from "../../store/products"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import "./productsShow.css"
 import Navbar from "../Navbar";
+import { addCartItem } from "../../store/cart"
 
 
 
 function ProductShow (props){
-
     const currentUser = useSelector(state=>state.session.user);
 
     const delivery = currentUser ? ` Deliver to ${currentUser.username}` : "Sign in for delivery";
@@ -17,8 +17,9 @@ function ProductShow (props){
     const productId = useParams().productId
     const product = useSelector(state => state.products?.[productId])
 
-    
-
+    function handleAddToCart (){
+        dispatch(addCartItem(productId))
+    }
     useEffect(()=>{
         dispatch(fetchProduct(productId))
     },[productId])
@@ -63,8 +64,10 @@ function ProductShow (props){
                     </span>
 
                     <p className="freeReturnsShow">FREE Returns</p>
-
-                    <p className="showDelivery">{delivery}</p>     
+                    <div className="showDeliveryContainer">
+                        <i className="fa-solid fa-location-dot" style={{color: "#2757aa"}}></i>
+                        <p className="showDelivery">{delivery}</p>   
+                    </div>  
             
                     <br/>
 
@@ -93,7 +96,7 @@ function ProductShow (props){
                     <br/>
                     
                     <div className="addToCartButtonArea">
-                        <button className="addToCartButtonShow">Add to Cart</button>
+                        <button className="addToCartButtonShow" onClick={handleAddToCart}>Add to Cart</button>
                         {/* <button className="buyNowButtonShow">Buy Now</button> */}
                     </div>
                 </div>

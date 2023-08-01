@@ -4,9 +4,10 @@ import csrfFetch from "./csrf.js";
 export const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
 
-const setCurrentUser = (user) => ({
+const setCurrentUser = (user,cart) => ({
   type: SET_CURRENT_USER,
-  payload: user 
+  payload: user ,
+  cart: cart
 });
 
 const removeCurrentUser = () => ({
@@ -34,7 +35,7 @@ export const login = ({ email, password }) => async dispatch => {
     if(data.errors) throw data
       storeCurrentUser(data.user);
       dispatch(setCurrentUser(data.user));
-      dispatch(getCartItems())
+      dispatch(getCartItems(data.cart))
   } else {
     throw response
   }

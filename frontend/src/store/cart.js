@@ -35,14 +35,16 @@ export const getCartItems = (userId) => async (dispatch) => {
 }
 
 
-export const addCartItem = (cartItem) => async (dispatch) => {
-    const response = await csrfFetch("api/carts",{
+export const addCartItem = (productId) => async (dispatch) => {
+    const response = await csrfFetch("/api/carts",{
         method: "POST",
-        body: JSON.stringify(cartItem)
+        body: JSON.stringify({
+            productId
+        })
     })
     const data = await response.json()
-
     dispatch(addProductToCart(data.cart))
+    return response
 }
 
 function cartReducer (state = {}, action){
@@ -54,7 +56,7 @@ function cartReducer (state = {}, action){
             return {...newState, ...action.cart}
         case ADD_PRODUCT_TO_CART:
             sessionStorage.setItem("cart", JSON.stringify(action.cartItem))
-            newState[action.cartItem.id] = action.cartItem
+            newState[action.cartItem?.id] = action.cartItem
             return newState
         case RESET_CART:
             return action.cart

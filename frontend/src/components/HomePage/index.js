@@ -1,3 +1,4 @@
+import Cart from "../Cart";
 import Navbar from "../Navbar";
 import ProductsIndex from "../ProductsIndex";
 
@@ -6,6 +7,7 @@ function HomePage(){
         <>
             <Navbar/>
             <ProductsIndex/>
+            <Cart/>
         </>
     )
 }

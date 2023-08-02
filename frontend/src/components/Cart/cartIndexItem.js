@@ -20,7 +20,7 @@ function CartIndexItem({productId,products,cartItemId,quantity}) {
    
 
     function handleChange(e){
-        setCartQuantity(e.target.value)
+        // setCartQuantity(e.target.value)
         // debugger
         dispatch(editCartItem({
             cart:{

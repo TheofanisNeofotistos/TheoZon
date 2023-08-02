@@ -4,13 +4,9 @@ class Api::CartsController < ApplicationController
     wrap_parameters include: Cart.attribute_names + ["productId"]
 
     def create 
-        # debugger
+        
         @cart = Cart.new(cart_item_params)
-        # @cart.user_id = current_user.id
-        # @user = current_user
-        # @cart.quantity = 1 
-        # the line above is a placeholder for quantity 
-        # debugger
+       
         if @cart.save
             # render something
             render "api/carts/show"

@@ -19,9 +19,9 @@ export default function Cart(){
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        dispatch(getCartItems(currentUser.id))
+        dispatch(getCartItems(currentUser?.id))
         dispatch(fetchProducts())
-    },[currentUser.cart])
+    },[currentUser?.cart])
 
     if(!products){
         return null
@@ -32,12 +32,15 @@ export default function Cart(){
     // console.log(allCartItems)
     // console.log(productInfo)
     // debugger
+    if (cart && Object.keys(cart).length) {
+
     return(
         <>
+    
         <Navbar/>
-
+    
         <h1 className="shoppingCartHeader">Shopping Cart</h1>
-        <br/>
+        <div className="cartPageBreak"/>
         <div className="cartPageContainer">
                 <div className="cartIndexContainer">
                     {Object.values(cart).map((item)=> <CartIndexItem key={item.productId} products ={products} productId = {item.productId}/>)}
@@ -45,8 +48,41 @@ export default function Cart(){
 
                 <div className="checkoutArea">
                             <h1>Hello from checkout area</h1>
+                            
                 </div>
         </div>
+
     </>
     )
+    } else {
+        return (
+            <>
+                <Navbar/>
+                
+                
+
+
+
+
+
+
+                <h1 className="shoppingCartHeader">Shopping Cart</h1>
+
+                <div className="cartPageBreak"/>
+
+                <div className="cartPageContainer">
+                    <div className="cartIndexContainer">
+                        <h1 className="cartEmpty"> Your TheoZon Cart is empty. </h1>
+                    </div>
+
+                        <div className="checkoutArea">
+                                    <h1>Hello from checkout area</h1>
+                                    
+                        </div>
+                </div>
+            </>
+
+            
+        )
+    }
 }

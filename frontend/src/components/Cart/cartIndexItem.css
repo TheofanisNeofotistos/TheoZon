@@ -1,11 +1,19 @@
+
+
+
+
 .shoppingCartHeader{
     font-family: 'Amazon Ember', sans-serif;
     font-size: 30px;
+    margin-left: 10px;
+    margin-top: 30px;
 }
 
 .shoppingCartContainer{
     /* display: flex; */
     /* justify-content: space-between; */
+    /* background-color: lightgrey; */
+    /* height: 200px; */
 }
 
 .cartPageContainer{
@@ -14,19 +22,87 @@
 
 .containerForEachCartItem{
     /* display: flex; */
+    /* border: 2px solid red; */
+    display: flex;
+    /* justify-content: ; */
 
 }
 
 .cartPhotoContainer{
-    width: 40px;
-    justify-content: center;
+   
+
 }
 
 .cartPhoto{
+    margin-left: 20px;
     width: 150px;
+    /* border: 3px solid orange; */
 }
 
 .cartProductIndexDetailsContainer{
-    display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.cartIndexContainer{
+    /* border: 5px solid pink; */
+    
+}
+
+.cartIndexMoney{
+    margin-left: 10px;
+    display: flex;
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cartProductName{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: 19px;
+}
+
+.checkoutArea{
+    margin-left: 20px;
+    /* border: 2px solid blue; */
+}
+
+.cartPageBreak{
+    width: 98%;
+    height: 2px;
+    border-top: 1px solid #BBBFBF;
+    margin: 10px 10px 10px 0px;
+    margin-left: 10px;
+}
+
+.cartInStock{
+    margin-left: 10px;
+    color: green;
+    font-size: 13px;
+    font-family: 'Amazon Ember', sans-serif; 
+}
+
+.cartDeleteButton{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: none;
+    text-decoration: none;
+    background-color: white;
+    color: #017185;
+}
+
+.cartDeleteButton:hover{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: none;
+    text-decoration: none;
+    background-color: white;
+    text-decoration: underline;
+}
+
+.cartEmpty{
+    font-size: 13px;
+    font-family: 'Amazon Ember', sans-serif; 
 }

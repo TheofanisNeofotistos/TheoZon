@@ -4,6 +4,7 @@ import { SET_CURRENT_USER } from "./session";
 const ADD_PRODUCT_TO_CART = "cart/ADD_PRODUCT_TO_CART"
 const RECIEVE_CART = "cart/RECIEVE_CART"
 const RESET_CART = "cart/RESET_CART"
+const REMOVE_CART_ITEM = "cart/REMOVE_CART_ITEM"
 
 const addProductToCart = (cartItem) => {
     return {
@@ -22,7 +23,14 @@ const recieveCart = (cart) => {
 export const resetCart = ()=> {
     return {
         type: RESET_CART,
-        cart: null
+        cart: {}
+    }
+}
+
+export const removeCartItem = (cartItemId) => {
+    return {
+        type: REMOVE_CART_ITEM,
+        cartItemId
     }
 }
 
@@ -49,6 +57,13 @@ export const addCartItem = (productId) => async (dispatch) => {
     return response
 }
 
+export const deleteCartItem = (cartItemId) => async (dispatch) => {
+    await csrfFetch(`/api/carts/${cartItemId}`,{
+    method: "DELETE"
+    })
+    dispatch(removeCartItem(cartItemId))
+}
+
 function cartReducer (state = {}, action){
     const newState = {...state}
 
@@ -64,6 +79,9 @@ function cartReducer (state = {}, action){
             return action.cart
         case SET_CURRENT_USER:
             return{...newState,...action.cart}
+        case REMOVE_CART_ITEM:
+            delete newState[action.cartItemId]
+            return newState
         default:
             return newState 
 

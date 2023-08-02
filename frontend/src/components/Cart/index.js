@@ -3,6 +3,7 @@ import { useSelector ,useDispatch} from "react-redux";
 import { getCartItems } from "../../store/cart";
 import { fetchProducts } from "../../store/products";
 import CartIndexItem from "./cartIndexItem";
+import Navbar from "../Navbar";
 
 
 export default function Cart(){
@@ -33,6 +34,7 @@ export default function Cart(){
     // debugger
     return(
         <>
+        <Navbar/>
 
         <h1 className="shoppingCartHeader">Shopping Cart</h1>
         <br/>

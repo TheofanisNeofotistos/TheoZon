@@ -33,10 +33,17 @@ export default function Cart(){
     // debugger
     return(
         <>
+
         <h1 className="shoppingCartHeader">Shopping Cart</h1>
         <br/>
-        <div className="cartIndexContainer">
-            {Object.values(cart).map((item)=> <CartIndexItem key={item.productId} products ={products} productId = {item.productId}/>)}
+        <div className="cartPageContainer">
+                <div className="cartIndexContainer">
+                    {Object.values(cart).map((item)=> <CartIndexItem key={item.productId} products ={products} productId = {item.productId}/>)}
+                </div>
+
+                <div className="checkoutArea">
+                            <h1>Hello from checkout area</h1>
+                </div>
         </div>
     </>
     )

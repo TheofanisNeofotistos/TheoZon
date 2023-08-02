@@ -1,0 +1,32 @@
+.shoppingCartHeader{
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: 30px;
+}
+
+.shoppingCartContainer{
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.cartPageContainer{
+    display: flex;
+}
+
+.containerForEachCartItem{
+    /* display: flex; */
+
+}
+
+.cartPhotoContainer{
+    width: 40px;
+    justify-content: center;
+}
+
+.cartPhoto{
+    width: 150px;
+}
+
+.cartProductIndexDetailsContainer{
+    display: flex;
+    justify-content: space-evenly;
+}

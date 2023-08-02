@@ -5,6 +5,7 @@ const ADD_PRODUCT_TO_CART = "cart/ADD_PRODUCT_TO_CART"
 const RECIEVE_CART = "cart/RECIEVE_CART"
 const RESET_CART = "cart/RESET_CART"
 const REMOVE_CART_ITEM = "cart/REMOVE_CART_ITEM"
+const UPDATE_CART_ITEM = "cart/UPDATE_CART_ITEM"
 
 const addProductToCart = (cartItem) => {
     return {
@@ -34,6 +35,12 @@ export const removeCartItem = (cartItemId) => {
     }
 }
 
+export const updateCartItem = (cartItem) => {
+    return{
+        type: UPDATE_CART_ITEM,
+        cartItem
+    }
+}
 
 export const getCartItems = (userId) => async (dispatch) => {
     // debugger
@@ -44,13 +51,22 @@ export const getCartItems = (userId) => async (dispatch) => {
     return response
 }
 
+export const editCartItem = (product) => async (dispatch) => {
+    // debugger
+    const response = await csrfFetch(`/api/carts/${product.cart.id}`,{
+        method: "PATCH",
+        body: JSON.stringify(product)
+    })
+    const data = await response.json()
+    // debugger
+    dispatch(updateCartItem(data.cart))
+    return response
+}
 
-export const addCartItem = (productId) => async (dispatch) => {
+export const addCartItem = (product) => async (dispatch) => {
     const response = await csrfFetch("/api/carts",{
         method: "POST",
-        body: JSON.stringify({
-            productId
-        })
+        body: JSON.stringify(product)
     })
     const data = await response.json()
     dispatch(addProductToCart(data.cart))
@@ -81,6 +97,9 @@ function cartReducer (state = {}, action){
             return{...newState,...action.cart}
         case REMOVE_CART_ITEM:
             delete newState[action.cartItemId]
+            return newState
+        case UPDATE_CART_ITEM:
+            newState[action.cartItem?.id].quantity = action.cartItem.quantity
             return newState
         default:
             return newState 

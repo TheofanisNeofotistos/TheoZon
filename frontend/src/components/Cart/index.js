@@ -43,11 +43,15 @@ export default function Cart(){
         <div className="cartPageBreak"/>
         <div className="cartPageContainer">
                 <div className="cartIndexContainer">
-                    {Object.values(cart).map((item)=> <CartIndexItem key={item.productId} products ={products} productId = {item.productId}/>)}
+                    {Object.values(cart).map((item)=> <CartIndexItem key={item.productId} products={products} cartItemId={item.id} quantity={item.quantity} productId={item.productId}/>)}
                 </div>
 
                 <div className="checkoutArea">
                             <h1>Hello from checkout area</h1>
+                            <p>Subtotal </p>
+                            <p>total cart items</p>
+                            <p>price</p>
+                            <button className="checkoutButton">Checkout</button>
                             
                 </div>
         </div>
@@ -57,15 +61,8 @@ export default function Cart(){
     } else {
         return (
             <>
-                <Navbar/>
-                
-                
-
-
-
-
-
-
+               <Navbar/>
+            
                 <h1 className="shoppingCartHeader">Shopping Cart</h1>
 
                 <div className="cartPageBreak"/>

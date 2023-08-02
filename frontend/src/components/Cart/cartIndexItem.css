@@ -65,8 +65,13 @@
 }
 
 .checkoutArea{
+    margin-top: 20px;
+    margin-right: 20px;
     margin-left: 20px;
-    /* border: 2px solid blue; */
+    height: 140px;
+    width: 300px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
 }
 
 .cartPageBreak{
@@ -105,4 +110,16 @@
 .cartEmpty{
     font-size: 13px;
     font-family: 'Amazon Ember', sans-serif; 
+}
+
+.checkoutButton{
+    margin-top: 30px;
+    margin-left: 13px;
+    margin-right: 10px;
+    background-color: #FFD712;
+    border-radius: 20px;
+    border: 1px solid gray;
+    height: 30px;
+    width: 250px;
+    font-family: 'Amazon Ember', sans-serif;
 }

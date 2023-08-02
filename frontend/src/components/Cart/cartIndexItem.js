@@ -1,21 +1,42 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import "./cartIndexItem.css"
 import { useDispatch, useSelector } from "react-redux"
-import { deleteCartItem } from "../../store/cart"
+import { deleteCartItem, editCartItem } from "../../store/cart"
+import { useState } from "react"
 
-function CartIndexItem({productId,products}) {
-    const product = Object.values(products).filter((product)=> product.id === productId)
-    // console.log(product)
-    // debugger
+function CartIndexItem({productId,products,cartItemId,quantity}) {
+    // const product = Object.values(products).filter((product)=> product.id === productId)
+    const product = products[productId]
 
-    const cartItemId = useSelector
-
-    const dispatch = useDispatch()
-
-    const handleDelete = () => {
-        dispatch(deleteCartItem())
-    }
+    const [cartQuantity,setCartQuantity] = useState(quantity)
     
+    
+    const dispatch = useDispatch()
+    
+    const handleDelete = () => {
+        dispatch(deleteCartItem(cartItemId))
+    }
+
+   
+
+    function handleChange(e){
+        setCartQuantity(e.target.value)
+        // debugger
+        dispatch(editCartItem({
+            cart:{
+                id: cartItemId,
+                productId: productId,
+                quantity: e.target.value
+            }}
+        ))
+        //this is where the update item would happen 
+    }
+    // debugger;
+    
+    if(!product){
+        return null
+    }
+
     return(
         <>
             <div className="shoppingCartContainer">
@@ -23,17 +44,17 @@ function CartIndexItem({productId,products}) {
                 <ul className="containerForEachCartItem">
                     
                     <div className="CartPhotoContainer">
-                        <Link to={`/products/${product[0].id}`}><img className="cartPhoto"src={product[0].photoUrl} alt="product_image"/></Link>
+                        <Link to={`/products/${product.id}`}><img className="cartPhoto"src={product.photoUrl} alt="product_image"/></Link>
                     </div>
 
                     <li className="cartProductIndexItem">
 
                         <div className="cartProductIndexDetailsContainer">
-                            <p className="cartProductName">{product[0].itemName}</p>
+                            <p className="cartProductName">{product.itemName}</p>
                             <br/>
                             <span className="cartIndexMoney">
                                     <p className="cartIndexMoneySymbol">$ </p>
-                                    <p className="cartIndexPrice">{product[0].itemPrice}</p>
+                                    <p className="cartIndexPrice">{product.itemPrice}</p>
                                     <p className="cartIndexMoneyZeros">.00</p>
                             </span>
 
@@ -44,21 +65,21 @@ function CartIndexItem({productId,products}) {
                             <br/>
 
                             <div className="containerForQuantityAndDelete">
-                                <label className="quantityCartShow">Qty:
-                                    <select className="quantityOption">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-
-                                    </select>
-                                </label>
+                            <label className="quantityCartShow">Qty:
+                                <select className="quantityOption"  onChange={handleChange} defaultValue={quantity}>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </label>
+                                
 
                                 <button className="cartDeleteButton" onClick={handleDelete}>
                                     Delete

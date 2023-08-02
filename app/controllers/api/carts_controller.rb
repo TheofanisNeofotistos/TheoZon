@@ -6,9 +6,9 @@ class Api::CartsController < ApplicationController
     def create 
         # debugger
         @cart = Cart.new(cart_item_params)
-        @cart.user_id = current_user.id
-        @user = current_user
-        @cart.quantity = 1 
+        # @cart.user_id = current_user.id
+        # @user = current_user
+        # @cart.quantity = 1 
         # the line above is a placeholder for quantity 
         # debugger
         if @cart.save
@@ -24,13 +24,16 @@ class Api::CartsController < ApplicationController
         @cart = Cart.find(params[:id])
         if @cart 
             @cart.delete
+            render json: "Succesfully deleted "
         end
     end 
+
 
     def update
         @cart = Cart.find(params[:id])
         if @cart && @cart.update(cart_item_params)
-            #render something 
+            render "api/carts/show"
+            # render json: "Succesfully updated "
         else 
             render json: {error: 'Cart could not be updated'}, status: 422
         end

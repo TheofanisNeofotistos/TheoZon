@@ -7,7 +7,6 @@ function HomePage(){
         <>
             <Navbar/>
             <ProductsIndex/>
-            <Cart/>
         </>
     )
 }

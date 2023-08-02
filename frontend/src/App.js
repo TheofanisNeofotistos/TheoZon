@@ -24,23 +24,23 @@ function App() {
   return (
     <>
       <Switch>
-        <Route path="/login">
+        <Route exact path="/login">
           <LoginFormPage />
         </Route>
 
-        <Route path="/signup">
+        <Route exact path="/signup">
           <SignupFormPage />
         </Route>
 
-        <Route path="/products/:productId">
+        <Route exact path="/products/:productId">
           <ProductShow/>
         </Route>
 
-        <Route path="/cart">
+        <Route exact path="/cart">
           <Cart/>
         </Route>
 
-        <Route path="/"><HomePage/></Route>
+        <Route exact path="/"><HomePage/></Route>
       </Switch>
 
 

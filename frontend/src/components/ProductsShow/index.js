@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect ,useState} from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchProduct } from "../../store/products"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
@@ -18,9 +18,24 @@ function ProductShow (props){
     const productId = useParams().productId
     const product = useSelector(state => state.products?.[productId])
 
+    const [quantity, setQuantity] = useState(1)
+
     function handleAddToCart (){
-        dispatch(addCartItem(productId))
+        dispatch(addCartItem({
+            cart:{
+                productId: productId,
+                quantity: quantity,
+                userId: currentUser.id
+            }
+        }))
     }
+
+    function handleChange(e){
+        setQuantity(e.target.value)
+        //this is where the update item would happen 
+    }
+
+
     useEffect(()=>{
         // debugger 
         dispatch(fetchProduct(productId))
@@ -86,18 +101,17 @@ function ProductShow (props){
 
                     <span className="quantityContainer">
                         <label className="quantityCartShow">Qty:
-                            <select className="quantityOption">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-
+                            <select className="quantityOption" onChange={handleChange} defaultValue={quantity}>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
                             </select>
                         </label>
                     </span>

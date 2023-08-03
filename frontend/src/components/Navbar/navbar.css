@@ -79,10 +79,10 @@ a{
 }
 
 .fa-magnifying-glass{
-    position: absolute;
+    /* position: absolute; */
     font-size: 24px;
     left: 942px;
-    margin-top: 18px;
+    /* margin-top: 18px; */
 }
 
 .logoutButton{
@@ -187,9 +187,87 @@ a{
 }
 
 .cartContainer{
+    position: relative;
     margin-top: 20px;
     margin-left: 330px;
 }
+
+
+
+
+
+/* this is the styling for the searchbar */
+
+.searchbar-container{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 600px;
+    margin-top: 8px;
+    margin-left: 200px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border: none;
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: medium;
+    position: relative;
+}
+
+.searchbar-container :focus{
+    /* border-color: #feb04b; */
+}
+
+#search-input {
+    /* width: 100%;
+     justify-content: center; */
+    
+    width: 100%;
+    
+    
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border: none;
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: medium;
+}
+
+#search-dropdown{
+    position: absolute;
+    top: 40px;
+    background-color: white;
+    
+}
+
+.search-dropdown-item{
+    
+    padding: 5px;
+    cursor: pointer;
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.search-dropdown-item:hover{
+  background-color: lightgray;
+}
+
+.cartQuantity{
+    position: absolute;
+    bottom: 31px;
+    left: 11px;
+    color: #F08806;
+    font-family: 'Amazon Ember', sans-serif;
+    font-weight: bold;
+}
+
+#search-button{
+      border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: none;
+    background-color: #FEBD68;
+}
+
+
 
 
 

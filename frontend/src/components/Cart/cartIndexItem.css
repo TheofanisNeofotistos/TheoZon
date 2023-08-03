@@ -112,7 +112,9 @@
 }
 
 .cartEmpty{
-    font-size: 13px;
+    margin-left: 400px;
+    margin-top: 100px;
+    font-size: 30px;
     font-family: 'Amazon Ember', sans-serif; 
 }
 
@@ -140,8 +142,29 @@
     /* flex-direction: column; */
 }
 
+.checkoutAreaSubtotal{
+    margin-top: 30px;
+    margin-left: 25px;
+    font-weight: bold;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
 .subTotalArea{
+    margin-left: 900px;
     display: flex;
     font-family: 'Amazon Ember', sans-serif;
     
+}
+
+.emptyCheckoutArea{
+    flex-direction: column;
+    
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 500px;
+    height: 140px;
+    width: 300px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-family: 'Amazon Ember', sans-serif; 
 }

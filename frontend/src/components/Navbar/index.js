@@ -5,6 +5,7 @@ import { logout } from "../../store/session";
 import { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Cart from "../Cart";
+import SearchBar from "./SearchBar";
 
 
 
@@ -45,28 +46,48 @@ function DropDown () {
 
 function Navbar () {
 
+    let currentUser = useSelector(state => state.session.user)
+
+    const cart = useSelector(state => Object.values(state.cart))
+    
+
+    let quant = 0 
+    
+    if(currentUser && cart.length){
+        cart.forEach((item)=>{
+            quant += item.quantity
+        });
+    };
+
     return (
         <>
         
             <div className="navbar">
                 <Link to="/"><img className="splashLogo" src="/TheoZonLogo1.png" alt="TheoZon"></img></Link>
 
-                <span className="searchBarContainer">
+                {/* <span className="searchBarContainer">
                     <input className="searchBar" type="text" placeholder="    Search TheoZon"></input>
                     <button className="searchButton"/>
                     < a href="https://www.linkedin.com/in/theofanis-neofotistos-483b33254/" class="fa-brands fa-linkedin" style={{color: "#FEBD68",}}> </a>
                     < a href="https://github.com/TheofanisNeofotistos" class="fa-brands fa-github" style={{color: "#febd68",}}> </a>
                     <i className="fa-solid fa-magnifying-glass" style={{color: "",}}></i>
-                </span>
+                </span> */}
 
-                <div></div>
+                <SearchBar/>
+
+                <div>
+                < a href="https://www.linkedin.com/in/theofanis-neofotistos-483b33254/" class="fa-brands fa-linkedin" style={{color: "#FEBD68",}}> </a>
+                    < a href="https://github.com/TheofanisNeofotistos" class="fa-brands fa-github" style={{color: "#febd68",}}> </a>
+                </div>
 
             
                 <DropDown />
 
                 <div className="cartContainer">
-                   <Link to="/cart"> <i className="fa-solid fa-cart-shopping fa-xl" style={{color: "#ffffff"}}></i></Link>
+                   <Link to="/cart"> <i className="fa-solid fa-cart-shopping fa-2xl" style={{color: "#ffffff"}}></i></Link>
+                    <div className="cartQuantity">{quant}</div>
                 </div>
+
                 
                 
             </div>

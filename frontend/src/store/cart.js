@@ -1,3 +1,4 @@
+import { async } from "regenerator-runtime";
 import csrfFetch from "./csrf";
 import { SET_CURRENT_USER } from "./session";
 
@@ -52,13 +53,13 @@ export const getCartItems = (userId) => async (dispatch) => {
 }
 
 export const editCartItem = (product) => async (dispatch) => {
-    // debugger
+
     const response = await csrfFetch(`/api/carts/${product.cart.id}`,{
         method: "PATCH",
         body: JSON.stringify(product)
     })
     const data = await response.json()
-    // debugger
+    
     dispatch(updateCartItem(data.cart))
     return response
 }
@@ -78,6 +79,12 @@ export const deleteCartItem = (cartItemId) => async (dispatch) => {
     method: "DELETE"
     })
     dispatch(removeCartItem(cartItemId))
+}
+
+export const checkout = (userId) => async (dispatch) => {
+    await csrfFetch(`/api/users/${userId}`,{
+        method: "DELETE"
+    })
 }
 
 function cartReducer (state = {}, action){

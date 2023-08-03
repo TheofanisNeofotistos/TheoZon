@@ -11,4 +11,13 @@ class Api::ProductsController < ApplicationController
         render :index 
     end 
 
+    def search 
+        query = params[:query] 
+
+        @products = Product
+        .where('item_name ILIKE ? OR item_description ILIKE ?',"%#{query}%","%#{query}%")
+
+        render :search
+    end 
+
 end

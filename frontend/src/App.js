@@ -7,7 +7,8 @@ import ProductShow from "./components/ProductsShow";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/session";
 import Cart from "./components/Cart";
-
+import SearchShowPage from "./components/SearchShowPage";
+import { getCartItems } from "./store/cart";
 
 function App() {
   const dispatch = useDispatch()
@@ -18,6 +19,10 @@ function App() {
     
       dispatch(setCurrentUser(currentUser));
     
+  },[])
+
+  useEffect(()=>{
+    dispatch(getCartItems(currentUser?.id))
   },[])
  
 
@@ -41,6 +46,11 @@ function App() {
         </Route>
 
         <Route exact path="/"><HomePage/></Route>
+
+        <Route path="/search">
+            <SearchShowPage/>
+        </Route>
+
       </Switch>
 
 

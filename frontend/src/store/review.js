@@ -56,7 +56,7 @@ export const editProductReview = (reviewId, review) => async (dispatch) => {
     dispatch(updateReview(review, reviewId))
 }
 
-export default function reviewsReducer (state = {}, action) {
+function reviewsReducer (state = {}, action) {
     const newState = {...state}
 
     switch(action.type) {
@@ -74,3 +74,5 @@ export default function reviewsReducer (state = {}, action) {
             return state
     }
 }
+
+export default reviewsReducer

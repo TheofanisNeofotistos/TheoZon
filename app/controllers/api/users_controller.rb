@@ -20,6 +20,11 @@ class Api::UsersController < ApplicationController
         @user = User.find_by(id: params[:id])
     end
 
+    def checkout 
+        @user = User.find(params[:id])
+        @user.cart_items.destroy_all
+    end 
+
 
 
     private

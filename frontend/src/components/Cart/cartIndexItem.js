@@ -8,7 +8,7 @@ function CartIndexItem({productId,products,cartItemId,quantity}) {
     // const product = Object.values(products).filter((product)=> product.id === productId)
     const product = products[productId]
 
-    const [cartQuantity,setCartQuantity] = useState(quantity)
+    
     
     
     const dispatch = useDispatch()

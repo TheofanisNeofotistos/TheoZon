@@ -182,8 +182,13 @@ a{
 }
 
 .cartContainer{
-    background-color: aqua;
-    justify-content: flex-end;
+    /* background-color: aqua;
+    justify-content: flex-end; */
+}
+
+.cartContainer{
+    margin-top: 20px;
+    margin-left: 330px;
 }
 
 

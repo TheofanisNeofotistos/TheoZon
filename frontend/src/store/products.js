@@ -1,7 +1,7 @@
 import csrfFetch from "./csrf";
 
 const RECEIVE_ALL_PRODUCTS = "products/RECEIVE_ALL_PRODUCTS"
-const RECEIVE_PRODUCT = "products/RECEIVE_PRODUCT"
+export const RECEIVE_PRODUCT = "products/RECEIVE_PRODUCT"
 
 const receieveProducts = (products) => {
     return ({

@@ -26,6 +26,9 @@ export default function Cart(){
     if(!products){
         return null
     }
+    const handleCheckout = () => {
+        
+    }
 
     
 
@@ -47,13 +50,20 @@ export default function Cart(){
                 </div>
 
                 <div className="checkoutArea">
-                            <h1>Hello from checkout area</h1>
-                            <p>Subtotal </p>
-                            <p>total cart items</p>
-                            <p>price</p>
+                            <p className="checkoutAreaSubtotal">Subtotal </p>
+                            <p className="checkoutAreaItems">{} items</p>
+                            <p className="checkoutAreaPrice">price</p>
                             <button className="checkoutButton">Checkout</button>
                             
                 </div>
+
+            
+        </div>
+
+        <div className="subTotalArea">
+            <p className="checkoutAreaSubtotal">Subtotal </p>
+            <p className="checkoutAreaItems">{} items</p>
+            <p className="checkoutAreaPrice">price</p>
         </div>
 
     </>

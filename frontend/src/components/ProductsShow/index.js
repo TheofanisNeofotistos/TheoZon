@@ -130,19 +130,7 @@ function ProductShow (props){
 
                 <div className="showPageBreak"></div>
 
-                <span className="showPageReviewRankings">
-                    <p>Customer Reviews</p>
-
-                    <span className="starRanking">
-                        <p>5 star</p>
-                        <button></button>    
-                    </span>
-                    
-                    <p>4 star</p>
-                    <p>3 star</p>
-                    <p>2 star</p>
-                    <p>1 star</p>
-                </span>
+               
 
 
             </div>

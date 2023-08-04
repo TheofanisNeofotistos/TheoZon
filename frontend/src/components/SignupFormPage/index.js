@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
+import { Link } from "react-router-dom/cjs/react-router-dom";
+
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -91,8 +93,13 @@ function SignupFormPage() {
             <button className="createButton" type="submit">Continue</button>
             <p className="loginAgreement">By creating an account, you agree to TheoZon's Conditions of Use and Privacy Notice .</p>
           </form>
+
+          <br/>
           
+          <p className="newToTheoZon">Already have an account?</p>
+          <Link className="signupLink" to="/login"> Sign In</Link>
         </div>
+
 
       </div>
     </>

@@ -1,0 +1,55 @@
+.reviewHeader{
+    margin-top: 40px;
+    margin-right: 500px;
+    font-family: 'Amazon Ember', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.reviewForm{
+    display: unset;
+    width: 700px;
+    border: none;
+}
+
+.reviewContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.textArea{
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-family: 'Amazon Ember', sans-serif;
+    /* height: 40%; */
+}
+
+.formBreak{
+    width: 700px;
+    height: 2px;
+    border-top: 1px solid #BBBFBF;
+    margin: 10px 0 10px;
+}
+
+.formSubmit{
+    margin-left: 90%;
+    background-color: #FFD712;
+    border-radius: 10px;
+    border: 1px solid gray;
+    height: 30px;
+    width: 60px;
+    font-family: 'Amazon Ember', sans-serif;
+}
+
+.formSubmit:hover{
+    background-color: #f5d223;
+    cursor: pointer;
+}
+
+.formH1{
+    font-family: 'Amazon Ember', sans-serif;
+    font-weight: bold;
+}

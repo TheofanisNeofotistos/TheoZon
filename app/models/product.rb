@@ -12,7 +12,10 @@
 class Product < ApplicationRecord
     validates :item_name, :item_description , :item_price , presence: true 
 
-    has_many :reviews 
+    has_many :reviews,
+    foreign_key: :product_id,
+    class_name: :Review
+
     has_many :carts
 
     has_one_attached :photo

@@ -21,7 +21,7 @@ function CartIndexItem({productId,products,cartItemId,quantity}) {
 
     function handleChange(e){
         // setCartQuantity(e.target.value)
-        // debugger
+        
         dispatch(editCartItem({
             cart:{
                 id: cartItemId,
@@ -31,7 +31,7 @@ function CartIndexItem({productId,products,cartItemId,quantity}) {
         ))
         //this is where the update item would happen 
     }
-    // debugger;
+    
     
     if(!product){
         return null

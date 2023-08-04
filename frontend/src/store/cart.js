@@ -46,7 +46,7 @@ export const updateCartItem = (cartItem) => {
 export const getCartItems = (userId) => async (dispatch) => {
     // debugger
     const response = await csrfFetch(`/api/users/${userId}`)
-    // debugger
+
     const data = await response.json()
     dispatch(recieveCart(data.cart))
     return response

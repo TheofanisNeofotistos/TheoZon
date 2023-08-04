@@ -40,14 +40,14 @@ export default function Cart(){
 
     const handleCheckout = () => {
         dispatch(resetCart())
-        dispatch(checkout(currentUser.id))
+        dispatch(checkout(currentUser?.id))
     }
 
     
 
     // console.log(allCartItems)
     // console.log(productInfo)
-    // debugger
+    
     if (cart && Object.keys(cart).length) {
 
     return(

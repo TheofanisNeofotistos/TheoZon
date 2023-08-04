@@ -22,6 +22,7 @@ function DropDown () {
         };
         
         const header = currentUser ? ` Hello ${currentUser.username}` : "Hello,sign in";
+        
 
 
         return (
@@ -55,9 +56,11 @@ function Navbar () {
     
     if(currentUser && cart.length){
         cart.forEach((item)=>{
-            quant += item.quantity
-        });
-    };
+            quant += parseInt(item?.quantity)
+        })
+    }else {
+        quant = 0 
+    }
 
     return (
         <>
@@ -82,6 +85,7 @@ function Navbar () {
 
             
                 <DropDown />
+                
 
                 <div className="cartContainer">
                    <Link to="/cart"> <i className="fa-solid fa-cart-shopping fa-2xl" style={{color: "#ffffff"}}></i></Link>

@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import "./productsShow.css"
 import Navbar from "../Navbar";
 import { addCartItem, getCartItems } from "../../store/cart"
+import Review from "../Review"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+
 
 
 
@@ -15,31 +18,43 @@ function ProductShow (props){
     const delivery = currentUser ? ` Deliver to ${currentUser.username}` : "Sign in for delivery";
 
     const dispatch = useDispatch()
+    const history = useHistory()
     const productId = useParams().productId
     const product = useSelector(state => state.products?.[productId])
+    const reviews = useSelector(state => state.reviews)
 
-    const [quantity, setQuantity] = useState(1)
+    const productReviews = Object.values(reviews)
+
+    const [quantity, setQuantity] = useState(0)
+
+    // debugger
 
     function handleAddToCart (){
         dispatch(addCartItem({
             cart:{
                 productId: productId,
                 quantity: quantity,
-                userId: currentUser.id
+                userId: currentUser?.id
             }
         }))
     }
+
+
 
     function handleChange(e){
         setQuantity(e.target.value)
         //this is where the update item would happen 
     }
 
+    function handleClick(e){
+        history.push(`/reviews/${productId}`)
+    }
+
 
     useEffect(()=>{
-        // debugger 
+    
         dispatch(fetchProduct(productId))
-        dispatch(getCartItems(currentUser.id))
+        dispatch(getCartItems(currentUser?.id))
     },[productId])
 
     // useEffect(()=>{
@@ -126,12 +141,55 @@ function ProductShow (props){
 
             </div>
 
+            <div className="showPageBreak"></div>
+
             <div className="showpageReviewContainer">
 
-                <div className="showPageBreak"></div>
+                <div className="reviewButtonAndReviewContainer">
 
-               
+                    <div className="reviewButtonContainer">
+                        <h1 className="reviewThisProduct">Review this product</h1>
 
+                        <br/>
+
+                        <p className="thoughtsProduct">Share your thoughts with other customers</p>
+
+                        <button className="showPageReviewButton" onClick={handleClick}>Write a customer review</button>
+                    </div>
+
+
+                    <div className="allReviews">
+                        <h1 className="topReview">Top reviews from the United States</h1>
+
+                        {productReviews.map((review)=>{
+                            if(review.productId == productId){
+                                
+                                return(
+                                    <>
+                                        <div className="reviewContainerBlock">
+                                            
+                                            {/* <p className="showReviewName">Demo User</p> */}
+                                            {/* <p className="allReviewsHeader">Review Header</p> */}
+                                            <p className="showReviewTitle">{review.title}</p>
+                                            <p className="verifiedPurchase">Verified Purchase</p>
+                                            {/* <p className="allReviewsBody">Review Body</p> */}
+                                            <p className="showReviewBody">{review.body}</p>
+                                            <br/>
+                                            <br/>
+                                        </div>
+    
+                                        <div className="showPageBreak"></div>
+                                    </>
+                                    
+                                )
+                            }
+                        })} 
+
+                    </div>
+
+                </div>
+
+            
 
             </div>
         </>

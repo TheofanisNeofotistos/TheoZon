@@ -1,8 +1,8 @@
 import { async } from "regenerator-runtime";
 import csrfFetch from "./csrf";
-import { RECEIVE_PRODUCT } from "./products";
+import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT } from "./products";
 
-const ADD_REVIEW = "review/ADD_REVIEW"
+export const ADD_REVIEW = "review/ADD_REVIEW"
 const UPDATE_REVIEW = "review/UPDATE_REVIEW"
 const REMOVE_REVIEW = "review/REMOVE_REVIEW"
 
@@ -29,18 +29,26 @@ export const removeReview = (reviewId) => {
 }
 
 export const submitProductReview = (review) => async (dispatch) =>{
-    const response = await csrfFetch("api/reviews",{
+    const {title, body, productId} = review 
+    const response = await csrfFetch("/api/reviews",{
         method: "POST",
-        body: JSON.stringify(review)
+        body: JSON.stringify({
+            review: {
+                title,
+                body, 
+                productId
+            }
+        })
     })
 
     const data = await response.json()
 
     dispatch(addReview(data.review))
+
 }
 
 export const deleteProductReview = (reviewId) => async (dispatch) => {
-    const response = await csrfFetch(`api/reviews/${reviewId}`,{
+    const response = await csrfFetch(`/api/reviews/${reviewId}`,{
         method: "DELETE"
     })
 
@@ -48,7 +56,7 @@ export const deleteProductReview = (reviewId) => async (dispatch) => {
 }
 
 export const editProductReview = (reviewId, review) => async (dispatch) => {
-    const response = await csrfFetch(`api/reviews/${reviewId}`,{
+    const response = await csrfFetch(`/api/reviews/${reviewId}`,{
         method: "PATCH",
         body: JSON.stringify(review)
     })
@@ -60,10 +68,15 @@ function reviewsReducer (state = {}, action) {
     const newState = {...state}
 
     switch(action.type) {
+        case RECEIVE_ALL_PRODUCTS:
+            return {...newState, ...action.reviews}
         case RECEIVE_PRODUCT:
             return {...newState, ...action.reviews}
         case ADD_REVIEW:
-            return {...newState, ...action.review}
+            return {
+                ...newState,
+                [action.review.id]:action.review
+            }
         case REMOVE_REVIEW:
             delete newState[action.reviewId]
             return newState;

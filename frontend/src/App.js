@@ -9,6 +9,7 @@ import { setCurrentUser } from "./store/session";
 import Cart from "./components/Cart";
 import SearchShowPage from "./components/SearchShowPage";
 import { getCartItems } from "./store/cart";
+import Review from "./components/Review";
 
 function App() {
   const dispatch = useDispatch()
@@ -43,6 +44,10 @@ function App() {
 
         <Route exact path="/cart">
           <Cart/>
+        </Route>
+
+        <Route exact path="/reviews/:productId">
+          <Review/>
         </Route>
 
         <Route exact path="/"><HomePage/></Route>

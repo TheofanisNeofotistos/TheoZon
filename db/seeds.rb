@@ -157,5 +157,48 @@ product10 = Product.create!(
 
 product10.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/watch.webp"),filename: "watch.jpg")
 
+product11 = Product.create!(
+    item_name: "Metal Gear Solid: Master Collection Vol.1 (PS5)",
+    item_description: "METAL GEAR SOLID: MASTER COLLECTION Vol. 1 contains “Metal Gear Solid,” “Metal Gear Solid 2: Sons of Liberty,” “Metal Gear Solid 3: Snake Eater” and much more bonus content. Bonus content includes the first title in the METAL GEAR series, a Screenplay Book containing in-game text of each title and a Master Book detailing the story and characters. Also included in the bonus content of the METAL GEAR SOLID: MASTER COLLECTION Vol. 1 will be two digital graphic novels. The Metal Gear Solid: Digital Graphic Novel is a fully voiced, digital comic depicting the events of Metal Gear Solid through beautifully dynamic animated panels, followed by Metal Gear Solid 2: Digital Graphic Novel that expands on the events of the sequel.",
+    item_price: 59,
+    category: "Electronics"
+)
 
+product11.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/metalgear.jpg"),filename: "metalgear.jpg")
+
+product13 = Product.create!(
+    item_name: "Disney Men's Baseball Cap, Mickey Mouse Adjustable Hat for Adult",
+    item_description: "The dad hat has become a staple in many hat lovers collections, and for good reason. The soft, unstructured cotton creates an incredibly comfortable fit that will only get better with age. As you wear it more the hat will break in, be careful though you might never want to take it off. This will truly be your favorite hat in no time. For over 50 years, ABG Accessories has been a leader in the headwear industry, providing unsurpassed quality and service with honesty and integrity. We use our deep expertise in headwear to create thousands of unique designs each year for hundreds of Retail and private label Brands. Outdoor Cap headwear is designed in the USA.",
+    item_price: 14,
+    category: "Apparel"
+)
+
+product13.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/mickeyhat.jpg"),filename: "mickeyhat.jpg")
+
+product14 = Product.create!(
+    item_name: "SOUR PATCH KIDS Watermelon Soft & Chewy Candy, Family Size, 4 - 1.8 lb Bags",
+    item_description: "Enjoy a sour twist on your favorite summer flavor with SOUR PATCH KIDS Watermelon Soft & Chewy Candy. Intense watermelon flavor fills each SOUR THEN SWEET candy for a summery blast to your taste buds, and they're shaped like watermelon slices to add excitement to your candy snacking experience. A fat free food, this pink and green candy is the perfect sweet end to your day. Keep this fruit flavored candy on hand for a quick sour treat or as party favors for Halloween, Valentine's Day or birthdays. SOUR PATCH KIDS watermelon candy also makes a great movie theater candy to snack on during your favorite flick. This bagged candy gives you plenty to share, so everyone can enjoy a SOUR THEN SWEET treat. Each package of green and pink candy is sealed to ensure the sour candies stay soft, chewy and full of watermelon flavor. Stay stocked with bulk candy so you're always ready with a sweet treat at snack time.",
+    item_price: 27,
+    category: "Fitness"
+)
+
+product14.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/sourpatchkids.jpg"),filename: "sourpatch.jpg")
+
+product15 = Product.create!(
+    item_name: "Benelli Bike 29'' Carbon Mountain 18 Speed, Brake Disc, Light-Weight Hardtail Frame (Large, Yellow Black) M22 4.0 ADV 29 CARB",
+    item_description: "Benelli M22 4.0 ADV 29 Carbon Frame Leading off the Benelli carbon fiber 29er range is the M22 4.0 ADV CARB 29, a purebred XC machine that has everything you need to start racing. The hardtail design with 100mm of front fork travel offers high quality suspension and a lockout mode for breakneck past on flatter terrain.The ultra-lightweight T800 carbon fiber frame— at the heart of each bike in the line-up— is super stiff to transfer all your pedaling power into sheer speed. The dependable Shimano Altus drivechain has three front chainrings and a 9-speed cassette, so you'll always be able to find the perfect gear combination to optimize your cadence. The terrain-loving 29er alloy wheels are cut out for XC competition and roll fast with their grippy CST 2.1” tires.Enjoy weekend circuits and hardcore training rides with this all-time favorite of the Benelli team. Our engineers thought of everything, and tricked out the M22 4.0 ADV CARB 29 to be featherweight and lightning quick out there on the XC race course.Innovative design inspired by pure Italian passion.Strong and lightweight T800 carbon frame with Shimano Altus components. Everything you need to get into XC racing on a top-tier bike with amazing handling.",
+    item_price: 1289,
+    category: "Fitness"
+)
+
+product15.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/bike.jpg"),filename: "bike.jpg")
+
+product16 = Product.create!(
+    item_name: "Dragon Ball Z Complete Box Set: Vols. 1-26 with premium",
+    item_description: "The Dragon Ball Z Complete Box Set contains all 26 volumes of the manga that propelled the global phenomenon that started with Dragon Ball into one of the world's most recognizable and best-selling manga. Also includes an exclusive double-sided poster and collector's booklet featuring fun Dragon Ball Z trivia and guides as well as an interview with its legendary creator.",
+    item_price: 120,
+    category: "Book"
+)
+
+product16.photo.attach(io: URI.open("https://theozon-dev.s3.amazonaws.com/dragonball.jpeg"),filename: "dragonball.jpg")
 

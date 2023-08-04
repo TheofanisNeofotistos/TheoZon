@@ -1,6 +1,7 @@
 import csrfFetch from "./csrf";
+import { ADD_REVIEW } from "./review";
 
-const RECEIVE_ALL_PRODUCTS = "products/RECEIVE_ALL_PRODUCTS"
+export const RECEIVE_ALL_PRODUCTS = "products/RECEIVE_ALL_PRODUCTS"
 export const RECEIVE_PRODUCT = "products/RECEIVE_PRODUCT"
 
 const receieveProducts = (products) => {
@@ -10,10 +11,12 @@ const receieveProducts = (products) => {
     })
 }
 
-const receieveProduct = (product) => {
+const receieveProduct = (product, reviews) => {
+
     return ({
         type:RECEIVE_PRODUCT,
-        product
+        product,
+        reviews
     })
 }
 
@@ -29,7 +32,7 @@ export const fetchProduct = (productId) => async (dispatch) => {
     const response = await csrfFetch(`/api/products/${productId}`)
     const data = await response.json()
 
-    dispatch(receieveProduct(data.product))
+    dispatch(receieveProduct(data.product,data.reviews))
     return response
 }
 
@@ -39,6 +42,7 @@ export const productsReducer = (state = initialState, action) => {
     let newState = Object.freeze(state)
 
     switch(action.type){
+        
         case RECEIVE_ALL_PRODUCTS:
             return {...action.products}
         case RECEIVE_PRODUCT:

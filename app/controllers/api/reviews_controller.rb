@@ -1,11 +1,12 @@
 class Api::ReviewsController < ApplicationController
     before_action :require_logged_in 
     # cannot write a review unless logged in 
-
+    wrap_parameters include: Review.attribute_names + ["product_id"]
     def create 
+    
         @review = Review.new(review_params)
 
-        @review.author_id = current_user.id
+        @review.user_id = current_user.id
 
         if @review.save 
             render "api/reviews/show"
@@ -33,7 +34,7 @@ class Api::ReviewsController < ApplicationController
 
 
     def review_params
-        params.permit(:product_id, :body , :title)
+        params.require(:review).permit(:product_id, :body , :title)
     end
 
 

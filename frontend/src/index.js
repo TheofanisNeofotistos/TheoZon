@@ -6,11 +6,14 @@ import './index.css';
 import App from './App';
 import configureStore from './store';
 import * as sessionActions from './store/session'
+import { submitProductReview } from './store/review';
 
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
+  window.submitProductReview = submitProductReview
+  
 }
 
 

@@ -162,7 +162,7 @@ function ProductShow (props){
                         <h1 className="topReview">Top reviews from the United States</h1>
 
                         {productReviews.map((review)=>{
-                            if(review.productId == productId){
+                            if(review.productId === productId){
                                 
                                 return(
                                     <>

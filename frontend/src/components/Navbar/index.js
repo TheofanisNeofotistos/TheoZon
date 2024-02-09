@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import { logout } from "../../store/session";
 import { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import Cart from "../Cart";
+// import Cart from "../Cart";
 import SearchBar from "./SearchBar";
 
 
@@ -79,7 +79,7 @@ function Navbar () {
                 <SearchBar/>
 
                 <div>
-                < a href="https://www.linkedin.com/in/theofanis-neofotistos-483b33254/" class="fa-brands fa-linkedin" style={{color: "#FEBD68",}}> </a>
+                `< a href="https://www.linkedin.com/in/theofanis-neofotistos-483b33254/" class="fa-brands fa-linkedin" style={{color: "#FEBD68",}}> </a>`
                     < a href="https://github.com/TheofanisNeofotistos" class="fa-brands fa-github" style={{color: "#febd68",}}> </a>
                 </div>
 

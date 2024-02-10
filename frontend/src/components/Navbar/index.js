@@ -52,7 +52,7 @@ function Navbar () {
     const cart = useSelector(state => Object.values(state.cart))
     
 
-    let quant = cart.length 
+    let quant = 0
     
     if(currentUser && cart.length){
         cart.forEach((item)=>{

@@ -23,7 +23,7 @@ export default function Cart(){
     useEffect(()=>{
         dispatch(getCartItems(currentUser?.id))
         dispatch(fetchProducts())
-    },[currentUser?.cart])
+    },[currentUser.cart])
 
     if(!products){
         return null
@@ -75,9 +75,9 @@ export default function Cart(){
         <div className="subTotalArea">
             <p className="checkoutAreaSubtotal">Subtotal ({quant})items ${price}.00</p>
 
-            <p className="checkoutAreaItems">({quant})items</p>
+            {/* <p className="checkoutAreaItems">({quant})items</p>
             
-            <p className="checkoutAreaPrice">${price}.00</p>
+            <p className="checkoutAreaPrice">${price}.00</p> */}
         </div>
 
     </>

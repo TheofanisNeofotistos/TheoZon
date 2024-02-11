@@ -168,11 +168,11 @@ function ProductShow (props){
                                     <>
                                         <div className="reviewContainerBlock">
                                             
-                                            {/* <p className="showReviewName">Demo User</p> */}
-                                            {/* <p className="allReviewsHeader">Review Header</p> */}
+                                            <p className="showReviewName">Demo User</p>
+                                            <p className="allReviewsHeader">Review Header</p>
                                             <p className="showReviewTitle">{review.title}</p>
                                             <p className="verifiedPurchase">Verified Purchase</p>
-                                            {/* <p className="allReviewsBody">Review Body</p> */}
+                                            <p className="allReviewsBody">Review Body</p>
                                             <p className="showReviewBody">{review.body}</p>
                                             <br/>
                                             <br/>

@@ -23,7 +23,7 @@ export default function Cart(){
     useEffect(()=>{
         dispatch(getCartItems(currentUser?.id))
         dispatch(fetchProducts())
-    },[currentUser.cart])
+    },[currentUser?.cart])
 
     if(!products){
         return null

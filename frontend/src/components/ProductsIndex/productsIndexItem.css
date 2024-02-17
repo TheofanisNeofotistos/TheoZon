@@ -15,6 +15,16 @@
     margin-bottom: 30px;
 }
 
+.containerForEachItem:hover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid orange;
+    background-color: #F7F7F7;
+    margin-bottom: 30px;
+}
+
 .productIndexItem{
 
     display: flex;

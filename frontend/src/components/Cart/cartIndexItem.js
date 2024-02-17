@@ -82,7 +82,7 @@ function CartIndexItem({productId,products,cartItemId,quantity}) {
                                 
 
                                 <button className="cartDeleteButton" onClick={handleDelete}>
-                                    Delete
+                                    DELETE
                                 </button>
                                 
                             </div>

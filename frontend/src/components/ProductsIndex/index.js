@@ -22,8 +22,9 @@ function ProductsIndex(){
     return (
 
         <>
-            <h1 className="ResultsHeader">Results</h1>
+            <h1 className="ResultsHeader">Welcome to TheoZon</h1>
             <br/>
+            <h2 className="ResultsHeader">Results</h2>
             <div className="productIndexContainer">
                 {Object.values(products).map((product)=> <ProductIndexItem key={product.id} product = {product}/>)}
             </div>

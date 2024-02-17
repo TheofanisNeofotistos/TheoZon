@@ -211,7 +211,7 @@ a{
 }
 
 .searchbar-container :focus{
-    /* border-color: #feb04b; */
+    border-color: #feb04b;
 }
 
 #search-input {
